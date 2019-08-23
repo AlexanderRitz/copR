@@ -1,11 +1,15 @@
 Package: copR
 Type: Package
 Title: Construction of Archimedean Copulas (copR)
+Authors@R: c(person("Alexander", "Ritz", role = c("aut", "cre"),
+                     email = "alex.ritz1992@gmail.com"),
+              person("Juliane", "Wilcke", role = "aut"))
 Version: 0.1.0
-Author: Alexander Ritz
+Author: Alexander Ritz [aut, cre],
+  Juliane Wilcke [aut]
 Maintainer: Alexander Ritz <alex.ritz1992@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
