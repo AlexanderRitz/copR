@@ -3,9 +3,15 @@
 #' Constructs an ArCop object, either by utilising Type for known archimedean copulas or generator for an arbitrary generator function.
 #'
 #' @param Type character. Type can be supplied in order to construct a named copula. e.g. a Frank copula with type = "Frank".
-#' @param param numeric. Supplies value of parameter(s) of the copula to be constructed.
+#' @param par numeric. Supplies value of parameter(s) of the copula to be constructed.
 #' @param dim interger. Supplies the number of dimensions of the copula to be constructed.
-#' @param generator function. Supplies the
+#' @return A list of class "ArCop" with elements
+#' \item{dimension}{Number of dimensions}
+#' \item{expression}{List containing expression for generator function and its inverse}
+#' \item{parameters}{Parameter value(s) of generator function}
+#' \item{prange}{list of upper and lower bound(s) of the parameter(s)}
+#' \item{Name}{Name of constructed copula, e.g. "Clayton"}
+#' \item{distribution}{list consisting of cdf and pdf}
 #'
 #' @examples
 #' \donttest{
@@ -15,16 +21,28 @@
 #'
 #' @export
 
-copu <- function(Type = "Unknown", param = NA, dim = 2L, generator = NULL)
+copu <- function(Type = "Unknown", par = NA, dim = 2L)
 {
+  if(Type == "Clayton"){
+    gen <- expression(t ^ ( - theta ) - 1)
+    invg <- expression((1 + s) ^ (- (1 / theta)))
+    lowb <- 0L
+    upb <- Inf
+    range <- list(lowb, upb)
+  }
+
+  range <- NULL
   cdf = 0
   pdf = 0
 
-  result <- list(dimension = dim,
-                 parameters = param,
+  result <- list(
+                 dimension = dim,
+                 expressions = list(gen, invg),
+                 parameters = par,
+                 prange = range,
                  Name = Type,
-                 distribution = c(cdf = cdf, pdf = pdf),
-                 genfun = generator)
+                 distribution = list(cdf, pdf),
+                 )
 
   class(result) <- 'ArCop'
 

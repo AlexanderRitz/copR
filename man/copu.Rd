@@ -4,16 +4,23 @@
 \alias{copu}
 \title{Construction of copula object}
 \usage{
-copu(Type = "Unknown", param = NA, dim = 2L, generator = NULL)
+copu(Type = "Unknown", par = NA, dim = 2L)
 }
 \arguments{
 \item{Type}{character. Type can be supplied in order to construct a named copula. e.g. a Frank copula with type = "Frank".}
 
-\item{param}{numeric. Supplies value of parameter(s) of the copula to be constructed.}
+\item{par}{numeric. Supplies value of parameter(s) of the copula to be constructed.}
 
 \item{dim}{interger. Supplies the number of dimensions of the copula to be constructed.}
-
-\item{generator}{function. Supplies the}
+}
+\value{
+A list of class "ArCop" with elements
+\item{dimension}{Number of dimensions}
+\item{expression}{List containing expression for generator function and its inverse}
+\item{parameters}{Parameter value(s) of generator function}
+\item{prange}{list of upper and lower bound(s) of the parameter(s)}
+\item{Name}{Name of constructed copula, e.g. "Clayton"}
+\item{distribution}{list consisting of cdf and pdf}
 }
 \description{
 Constructs an ArCop object, either by utilising Type for known archimedean copulas or generator for an arbitrary generator function.
