@@ -40,7 +40,7 @@ copu <- function(Type = "Unknown", par = NA, dim = 2L)
                  parameters = par,
                  prange = range,
                  Name = Type,
-                 distribution = list(cdf, pdf),
+                 distribution = list(cdf, pdf)
                  )
 
   class(result) <- 'ArCop'
