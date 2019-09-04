@@ -18,7 +18,7 @@ A list of class "ArCop" with elements
 \item{dimension}{Number of dimensions}
 \item{expression}{List containing expression for generator function and its inverse}
 \item{parameters}{Parameter value(s) of generator function}
-\item{prange}{list of upper and lower bound(s) of the parameter(s)}
+\item{prange}{vector of upper and lower bound(s) of the parameter(s)}
 \item{Name}{Name of constructed copula, e.g. "Clayton"}
 \item{distribution}{list consisting of cdf and pdf}
 }

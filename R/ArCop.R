@@ -9,7 +9,7 @@
 #' \item{dimension}{Number of dimensions}
 #' \item{expression}{List containing expression for generator function and its inverse}
 #' \item{parameters}{Parameter value(s) of generator function}
-#' \item{prange}{list of upper and lower bound(s) of the parameter(s)}
+#' \item{prange}{vector of upper and lower bound(s) of the parameter(s)}
 #' \item{Name}{Name of constructed copula, e.g. "Clayton"}
 #' \item{distribution}{list consisting of cdf and pdf}
 #'
@@ -28,10 +28,9 @@ copu <- function(Type = "Unknown", par = NA, dim = 2L)
     invg <- expression((1 + s) ^ (- (1 / theta)))
     lowb <- 0L
     upb <- Inf
-    range <- list(lowb, upb)
+    range <- c(lowb, upb)
   }
 
-  range <- NULL
   cdf = 0
   pdf = 0
 
