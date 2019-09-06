@@ -21,9 +21,10 @@
 #'
 #' @export
 
-copu <- function(Type = "Unknown", par = NA, dim = 2L)
-{
+copu <- function(Type = "Unknown", par = NA, dim = 2L){
+
   if(Type == "Clayton"){
+
     gen <- expression(t ^ ( - theta ) - 1)
     invg <- expression((1 + s) ^ (- (1 / theta)))
     lowb <- 0L
