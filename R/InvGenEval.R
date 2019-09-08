@@ -8,7 +8,6 @@
 #'
 
 InvGenEval <- function (s, copula) {
-
   if (length(copula$parameters == 1L)) {
     param <- copula$parameters
     theta <- param
@@ -16,6 +15,8 @@ InvGenEval <- function (s, copula) {
     return(out)
 
   } else {
-    warning("In case of self built copula object with more than one parameter, correct order of parameters should be checked!")
+    warning(
+      "In case of self built copula object with more than one parameter, correct order of parameters should be checked!"
+    )
   }
 }

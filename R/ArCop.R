@@ -21,29 +21,31 @@
 #'
 #' @export
 
-copu <- function(Type = "Unknown", par = NA, dim = 2L){
-
+copu <- function(Type = "Unknown",
+  par = NA,
+  dim = 2L) {
   if (Type == "Clayton") {
-
-    gen <- expression(t ^ ( - theta ) - 1)
-    invg <- expression((1 + s) ^ (- (1 / theta)))
+    gen <- expression(t ^ (-theta) - 1)
+    invg <- expression((1 + s) ^ (-(1 / theta)))
     lowb <- 0L
     upb <- Inf
     range <- c(lowb, upb)
 
   } else {
-    stop("Given family of copula not implemented. Please check availabe families by looking up the allowed Types.")
+    stop(
+      "Given family of copula not implemented. Please check availabe families by looking up the allowed Types."
+    )
   }
   cdf = 0
   pdf = 0
   result <- list(
-                 dimension = dim,
-                 expressions = list(gen = gen, invg = invg),
-                 parameters = par,
-                 prange = range,
-                 Name = Type,
-                 distribution = list(cdf = cdf, pdf = pdf)
-                 )
+    dimension = dim,
+    expressions = list(gen = gen, invg = invg),
+    parameters = par,
+    prange = range,
+    Name = Type,
+    distribution = list(cdf = cdf, pdf = pdf)
+  )
   class(result) <- 'ArCop'
   return(result)
 }

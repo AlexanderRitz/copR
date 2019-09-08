@@ -16,25 +16,30 @@
 #' @export
 
 rCop <- function (copula = NULL, n = 0) {
-
-  if (class(copula) == "ArCop"){
-
+  if (class(copula) == "ArCop") {
     if (copula$Name == "Clayton") {
       theta <- copula$par
       d <- copula$dim
-      V <- stats::rgamma(n = n, shape = 1 / theta, scale = 1)
+      V <- stats::rgamma(n = n,
+        shape = 1 / theta,
+        scale = 1)
     } else {
-      stop("Given family of copula not implemented. Please check availabe families by looking up the allowed Types.")
+      stop(
+        "Given family of copula not implemented. Please check availabe families by looking up the allowed Types."
+      )
     }
-    X <- matrix(data = NA, nrow = n, ncol = d)
+    X <- matrix(data = NA,
+      nrow = n,
+      ncol = d)
 
     for (i in 1:d) {
       X[, i] <- stats::runif(n = n, min = 0, max = 1)
     }
-    U <- matrix(data = NA, nrow = n, ncol = d)
+    U <- matrix(data = NA,
+      nrow = n,
+      ncol = d)
 
     for (j in 1:d) {
-
       for (i in 1:n) {
         U[i, j] <- InvGenEval(s = (-log(X[i, j]) / V[i]), copula = copula)
       }
