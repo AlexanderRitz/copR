@@ -20,7 +20,7 @@ Constructs a sample based on a given ArCop object.
 \examples{
 \donttest{
 exC <- copu(Type = "Clayton", par = 5, dim = 2)
-exS <- rCop(copula = ex, n = 1000)
+exS <- rCop(copula = exC, n = 1000)
 plot(exS, ylim = c(0, 1), xlim = c(0, 1), ylab = "U2", xlab = "U1")
 }
 

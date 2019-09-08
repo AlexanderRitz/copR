@@ -27,8 +27,8 @@ Constructs an ArCop object, either by utilising Type for known archimedean copul
 }
 \examples{
 \donttest{
-ExCop <- copu()
-ExCop
+exC <- copu(Type = "Clayton", par = 5, dim = 2)
+exC
 }
 
 }
