@@ -21,7 +21,7 @@
 #'
 #' @export
 
-copu <- function(Type = "Unknown",
+copu <- function (Type = "Unknown",
   par = NA,
   dim = 2L) {
   if (Type == "Clayton") {
@@ -36,8 +36,8 @@ copu <- function(Type = "Unknown",
       "Given family of copula not implemented. Please check availabe families by looking up the allowed Types."
     )
   }
-  cdf = 0
-  pdf = 0
+  cdf <- NULL
+  pdf <- NULL
   result <- list(
     dimension = dim,
     expressions = list(gen = gen, invg = invg),
@@ -47,5 +47,9 @@ copu <- function(Type = "Unknown",
     distribution = list(cdf = cdf, pdf = pdf)
   )
   class(result) <- 'ArCop'
+  cdf <- pCop(result)
+  pdf = 0
+  result$distribution$cdf <- cdf
+
   return(result)
 }

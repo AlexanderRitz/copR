@@ -15,6 +15,6 @@
 #'
 #' @export
 
-CLike <- function(copula, marg){
+CLike <- function (copula, marg) {
   print("Initialisation")
 }

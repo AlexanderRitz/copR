@@ -10,6 +10,8 @@ Author: Alexander Ritz [aut, cre],
 Maintainer: Alexander Ritz <alex.ritz1992@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
+Depends: R (>= 3.6.0)
+Imports:
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
