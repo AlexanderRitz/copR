@@ -15,6 +15,7 @@
 
 pCop <- function (copula) {
   d <- copula$dimension
+  if (copula$Name == "Clayton"){
   theta <- copula$parameters
   expr <- "u1^(-theta) - 1"
   for (i in 2:d) {
@@ -23,4 +24,7 @@ pCop <- function (copula) {
   }
     expr <- paste("(1 + (", expr, "))^(-1/theta)")
     parse(text = expr)
+  } else {
+    stop("Please supply an ArCop object with a supported family specification")
+  }
 }

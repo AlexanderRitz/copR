@@ -4,8 +4,8 @@
 \alias{coptourplot}
 \title{Contourplot of Copula}
 \usage{
-coptourplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
-  ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
+coptourplot(copula, FUN, n.grid = 26, delta = 0, nlevels = 20,
+  xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
 }
 \arguments{
 \item{copula}{ArCop object. Supplies the copula to be used for the contourplot.}
@@ -15,6 +15,8 @@ coptourplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
 \item{n.grid}{integer.}
 
 \item{delta}{numeric.}
+
+\item{nlevels}{integer.}
 
 \item{xlim}{integer.}
 
