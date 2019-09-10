@@ -1,9 +1,9 @@
 #' Density function of a Copula
 #'
-#' Constructs the density function for a supplied copula object.
+#' Constructs the density function by differntiating the supplied cdf expression.
 #'
-#' @param copula ArCop object. Supplies the copula for which the pdf is to be defined.
-#' @return An expression for the pdf of the supplied copula object.
+#' @param cdf expression. Supplies the cdf for which the pdf is to be calculated.
+#' @return An expression for the pdf of the supplied cdf.
 #'
 #' @examples
 #' \donttest{
