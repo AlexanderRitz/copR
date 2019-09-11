@@ -48,8 +48,9 @@ copu <- function (Type = "Unknown",
   )
   class(result) <- 'ArCop'
   cdf <- pCop(result)
-  pdf = 0
   result$distribution$cdf <- cdf
+  pdf <- dCop(result)
+  result$distribution$pdf <- pdf
 
   return(result)
 }

@@ -3,5 +3,6 @@
 export(CLike)
 export(coptourplot)
 export(copu)
+export(dCop)
 export(pCop)
 export(rCop)
