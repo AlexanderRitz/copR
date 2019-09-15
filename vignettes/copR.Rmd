@@ -1,0 +1,23 @@
+---
+title: "copR"
+author: "Alexander Ritz, Juliane Wilcke"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{copR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This vignette will illustrate the use of copR with some examples.
+
+```{r setup}
+library(copR)
+```

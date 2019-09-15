@@ -6,9 +6,9 @@
 \usage{
 coppersplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
   ylim = 0:1, zlim = NULL, xlab = "u1", ylab = "u2",
-  zlab = deparse(substitute(FUN))[1], theta = -45/2, phi = 30,
-  expand = 0.75, col = heat.colors, shade = 0.2,
-  ticktype = "detail", ...)
+  theta = -45/2, phi = 30, expand = 0.75, col = c("red", "yellow"),
+  shade = 0.2, ticktype = "detail",
+  zlab = deparse(substitute(FUN))[1], ...)
 }
 \arguments{
 \item{copula}{ArCop object. Supplies the copula to be used for the perspective plot.}
@@ -23,25 +23,11 @@ coppersplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
 
 \item{ylim}{integer.}
 
-\item{zlim}{integer.}
-
 \item{xlab}{character.}
 
 \item{ylab}{character.}
 
-\item{zlab}{character.}
-
-\item{theta}{integer.}
-
-\item{phi}{integer.}
-
-\item{expand}{integer.}
-
-\item{col}{character, function, or integer.}
-
-\item{shade}{integer.}
-
-\item{ticktype}{character.}
+\item{nlevels}{integer.}
 }
 \value{
 A perspective plot of a surface over the x-y plane using the values given by FUN for a copula of the form given by the supplied copula object.
