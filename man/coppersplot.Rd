@@ -7,7 +7,7 @@
 coppersplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
   ylim = 0:1, zlim = NULL, xlab = "u1", ylab = "u2",
   zlab = deparse(substitute(FUN))[1], theta = -45/2, phi = 30,
-  expand = 0.75, col = heat.colors, shade = 0.2,
+  expand = 0.75, col = c("red", "yellow"), shade = 0.2,
   ticktype = "detail", ...)
 }
 \arguments{
@@ -42,6 +42,8 @@ coppersplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
 \item{shade}{integer.}
 
 \item{ticktype}{character.}
+
+\item{...}{character, function, or integer.}
 }
 \value{
 A perspective plot of a surface over the x-y plane using the values given by FUN for a copula of the form given by the supplied copula object.

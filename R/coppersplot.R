@@ -18,6 +18,7 @@
 #' @param col character, function, or integer.
 #' @param shade integer.
 #' @param ticktype character.
+#' @param ... character, function, or integer.
 #'
 #' @return A perspective plot of a surface over the x-y plane using the values given by FUN for a copula of the form given by the supplied copula object.
 #'
@@ -42,7 +43,7 @@ coppersplot <- function (copula,
                          theta = -45/2,
                          phi = 30,
                          expand = 0.75,
-                         col = heat.colors,
+                         col = c("red", "yellow"),
                          shade = 0.2,
                          ticktype = "detail",
                          ...) {
@@ -66,6 +67,13 @@ coppersplot <- function (copula,
           if (min(zlim, na.rm = TRUE) == max(zlim, na.rm = TRUE)) {
             stop("Perspective plots of a horizontal plane are not supported.")
           }
+        }
+        if (length(col) == 2) {
+          colpal <- grDevices::colorRampPalette(col)
+          cols <- colpal(100)
+          z.facet.center <- (z[-1, -1] + z[-1, -ncol(z)] + z[-nrow(z), -1] + z[-nrow(z), -ncol(z)])/4
+          z.facet.range <- cut(z.facet.center, 100)
+          col <- cols[z.facet.range]
         }
         graphics::persp(
           x = gx,
