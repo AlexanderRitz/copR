@@ -20,7 +20,7 @@ dCop <- function(copula){
   } else {
     pdf <- copula$distribution$cdf
     for (i in 1:d){
-      pdf <- stats::D(pdf, paste0("u", i))
+      pdf <- stats::D(pdf, paste("u", i, sep = ""))
     }
     return(pdf)
   }

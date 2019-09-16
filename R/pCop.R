@@ -19,7 +19,7 @@ pCop <- function (copula) {
   theta <- copula$parameters
   expr <- "u1^(-theta) - 1"
   for (i in 2:d) {
-    expr2 <- paste0("u", i, "^(-theta) - 1")
+    expr2 <- paste("u", i, "^(-theta) - 1", sep = "")
     expr <- paste(expr, expr2, sep=" + ")
   }
     expr <- paste("(1 + (", expr, "))^(-1/theta)")

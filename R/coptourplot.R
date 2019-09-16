@@ -21,7 +21,7 @@
 #'
 #' @export
 
-coptourplot <- function (copula,
+coPtourplot <- function (copula,
   FUN,
   n.grid = 26,
   delta = 0,
