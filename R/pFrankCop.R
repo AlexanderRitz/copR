@@ -1,15 +1,17 @@
-#Construction of Clayton cdf
+#Construction of Frank cdf
 
 
-pCop.ClayCop <- function (copula, eva = FALSE, u) {
+pCop.FrankCop <- function (copula, eva = FALSE, u) {
   d <- copula$dimension
   theta <- copula$parameter
-  expr <- "u1^(-theta) - 1"
+  expr <- "-log((exp(-theta * u1) - 1) / (exp(-theta) - 1) )"
   for (i in 2:d) {
-    expr2 <- paste("u", i, "^(-theta) - 1", sep = "")
+    expr2 <-
+      paste("- log( (exp(-theta * u", i, ") - 1) / (exp(-theta) - 1))", sep = "")
     expr <- paste(expr, expr2, sep = " + ")
   }
-  expr <- paste("(1 + (", expr, "))^(-1/theta)")
+  expr <-
+    paste("-1 / theta * log(1 + exp(-(", expr, ")) * (exp(-theta) - 1))")
   if (eva == FALSE) {
     parse(text = expr)
   } else {

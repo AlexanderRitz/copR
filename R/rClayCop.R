@@ -1,5 +1,6 @@
 #Generating random samples of a Clayton copula based on the algorithm of Marshall and Olkin (1988)
 
+
 rCop.ClayCop <- function (copula = NULL, n = 0) {
   theta <- copula$par
   d <- copula$dim

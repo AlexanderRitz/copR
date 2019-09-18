@@ -2,6 +2,7 @@
 
 export(CLike)
 export(ClayCop)
+export(FrankCop)
 export(coPtourplot)
 export(coppersplot)
 export(dCop)
