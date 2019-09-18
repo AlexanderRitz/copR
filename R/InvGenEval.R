@@ -1,22 +1,22 @@
 #' Inverse Generator function utility
 #'
-#' Applies appropriate inverted generator function to input, based on supplied ArCop object.
+#' Applies appropriate inverted generator function to input, based on supplied copula object.
 #'
-#' @param copula ArCop object. Decides form of generator function.
+#' @param copula A copula object. Decides form of generator function.
 #' @param s numeric. Input for the inverted generator function to be applied.
-#' @return The value of the inverse generator function of the given ArCop object at input x.
+#' @return The value of the inverse generator function of the given copula object at input x.
 #'
 
 InvGenEval <- function (s, copula) {
-  if (length(copula$parameters == 1L)) {
-    param <- copula$parameters
+  if (length(copula$parameter == 1L)) {
+    param <- copula$parameter
     theta <- param
     out <- eval(copula$expressions$invg[[1]])
     return(out)
 
   } else {
-    warning(
-      "In case of self built copula object with more than one parameter, correct order of parameters should be checked!"
+    stop(
+      "Families with more than one parameter are not supported at the moment."
     )
   }
 }

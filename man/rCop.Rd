@@ -7,21 +7,21 @@
 rCop(copula = NULL, n = 0)
 }
 \arguments{
-\item{copula}{ArCop object. Decides the copula to sample from.}
+\item{copula}{A copula object. Decides the copula to sample from.}
 
 \item{n}{integer. Supplies the desired number of observations.}
 }
 \value{
-A matrix containing n observations of d random variables, based on the "Type" of the supplied ArCop object.
+A matrix containing n observations of d random variables, based on the family of the supplied copula object.
 }
 \description{
-Constructs a sample based on a given ArCop object.
+Constructs a sample based on a given copula object.
 }
 \examples{
 \donttest{
-exC <- copu(Type = "Clayton", par = 5, dim = 2)
-exS <- rCop(copula = exC, n = 1000)
-plot(exS, ylim = c(0, 1), xlim = c(0, 1), ylab = "U2", xlab = "U1")
+exCop <- ClayCop(par = 5, dim = 2)
+exSam <- rCop(copula = exCop, n = 1000)
+plot(exSam, ylim = c(0, 1), xlim = c(0, 1), ylab = "U2", xlab = "U1")
 }
 
 }

@@ -7,7 +7,7 @@
 CLike(copula, marg)
 }
 \arguments{
-\item{copula}{ArCop object. Decides the copula family for which the Likelhood function is to be calculated.}
+\item{copula}{A copula object. Decides the copula family for which the Likelhood function is to be calculated.}
 
 \item{marg}{character. Supplied choices for the marginal distribution functions.
 Can either be estimated through empirical functions or given by name.}

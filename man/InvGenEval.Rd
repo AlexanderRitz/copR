@@ -9,11 +9,11 @@ InvGenEval(s, copula)
 \arguments{
 \item{s}{numeric. Input for the inverted generator function to be applied.}
 
-\item{copula}{ArCop object. Decides form of generator function.}
+\item{copula}{A copula object. Decides form of generator function.}
 }
 \value{
-The value of the inverse generator function of the given ArCop object at input x.
+The value of the inverse generator function of the given copula object at input x.
 }
 \description{
-Applies appropriate inverted generator function to input, based on supplied ArCop object.
+Applies appropriate inverted generator function to input, based on supplied copula object.
 }

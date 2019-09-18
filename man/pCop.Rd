@@ -4,21 +4,27 @@
 \alias{pCop}
 \title{Distribution function of a copula}
 \usage{
-pCop(copula)
+pCop(copula, eva, u)
 }
 \arguments{
-\item{copula}{ArCop object. Supplies the copula for which the cdf is to be defined.}
+\item{copula}{A copula object. Supplies the copula for which the cdf is to be defined.}
+
+\item{eva}{Logical. If eva = TRUE, the resulting expression for the cdf will be evaluated for the supplied arguments.}
+
+\item{u}{numeric. Optional argument supplying the data to evaluate the cdf, only needed in case of eva = TRUE.}
 }
 \value{
-An expression for the cdf of the supplied copula object.
+An expression for the cdf of the supplied copula object or its numeric value at the supplied u in case evaluation was chosen..
 }
 \description{
 Constructs the distribution function for a supplied copula object.
 }
 \examples{
 \donttest{
-exC <- copu(Type = "Clayton", par = 5, dim = 2)
-exS <- rCop(copula = exC, n = 1000)
+exCop <- ClayCop(par = 5, dim = 2)
+exCDF <- pCop(exCop, eva = FALSE)
+#In case evaluation of the cdf is wanted:
+exCDFval <- pCop(exCop, eva = TRUE, u = c(0.5, 0.5))
 }
 
 }

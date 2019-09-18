@@ -4,21 +4,27 @@
 \alias{dCop}
 \title{Density function of a Copula}
 \usage{
-dCop(copula)
+dCop(copula, eva, u)
 }
 \arguments{
 \item{copula}{ArCop object. Supplies the copula for which the pdf is to be constructed.}
+
+\item{eva}{Logical. If eva = TRUE, the resulting expression will be evaluated for the supplied arguments.}
+
+\item{u}{numeric. Optional argument supplying the data to evaluate the pdf, only needed in case of eva = TRUE.}
 }
 \value{
-An expression for the pdf of the supplied copula.
+expression or numeric for the pdf of the supplied copula object or its value at the supplied u.
 }
 \description{
 Constructs the density function by differntiating the supplied cdf expression.
 }
 \examples{
 \donttest{
-exC <- copu(Type = "Clayton", par = 5, dim = 2)
-exS <- rCop(copula = exC, n = 1000)
+exCop <- ClayCop(par = 5, dim = 2)
+exPDF <- dCop(exCop, eva = FALSE)
+#In case evaluation of the pdf is wanted:
+exPDFval <- dCop(exCop, eva = TRUE, u = c(0.5, 0.5))
 }
 
 }

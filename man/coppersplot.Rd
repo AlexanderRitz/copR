@@ -11,7 +11,7 @@ coppersplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
   ticktype = "detail", ...)
 }
 \arguments{
-\item{copula}{ArCop object. Supplies the copula to be used for the perspective plot.}
+\item{copula}{A copula object. Supplies the copula to be used for the perspective plot.}
 
 \item{FUN}{function. Gives the function to be plotted.}
 
@@ -46,10 +46,11 @@ coppersplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
 \item{...}{character, function, or integer.}
 }
 \value{
-A perspective plot of a surface over the x-y plane using the values given by FUN for a copula of the form given by the supplied copula object.
+A perspective plot of a surface over the x-y plane using the values
+given by FUN for a copula of the form given by the supplied copula object.
 }
 \description{
-Gives a perspective plot of a surface for a given copula object for a specified function
+Gives a perspective plot of a surface for a given copula object for a specified function.
 }
 \examples{
 \donttest{

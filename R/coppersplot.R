@@ -1,8 +1,8 @@
 #' Perspective Plot of Copula
 #'
-#' Gives a perspective plot of a surface for a given copula object for a specified function
+#' Gives a perspective plot of a surface for a given copula object for a specified function.
 #'
-#' @param copula ArCop object. Supplies the copula to be used for the perspective plot.
+#' @param copula A copula object. Supplies the copula to be used for the perspective plot.
 #' @param FUN function. Gives the function to be plotted.
 #' @param n.grid integer.
 #' @param delta numeric.
@@ -20,7 +20,8 @@
 #' @param ticktype character.
 #' @param ... character, function, or integer.
 #'
-#' @return A perspective plot of a surface over the x-y plane using the values given by FUN for a copula of the form given by the supplied copula object.
+#' @return A perspective plot of a surface over the x-y plane using the values
+#' given by FUN for a copula of the form given by the supplied copula object.
 #'
 #' @examples
 #' \donttest{
@@ -55,7 +56,7 @@ coppersplot <- function (copula,
       if (0 <= delta && delta < (1 / 2)) {
         gx <- seq(xlim[1] + delta, xlim[2] - delta, length.out = n.grid[1])
         gy <- seq(ylim[1] + delta, ylim[2] - delta, length.out = n.grid[2])
-        theta_ <- copula$parameters
+        theta_ <- copula$parameter
         z <- app(
           x = gx,
           y = gy,

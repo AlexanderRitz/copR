@@ -8,9 +8,11 @@ coPtourplot(copula, FUN, n.grid = 26, delta = 0, nlevels = 20,
   xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
 }
 \arguments{
-\item{copula}{ArCop object. Supplies the copula to be used for the contourplot.}
+\item{copula}{A copula object. Supplies the copula to be used for the
+contourplot.}
 
-\item{FUN}{function. Gives the function to be plotted}
+\item{FUN}{character. Decides whether the cdf or pdf of the supplied copula
+is to be plotted. Accepts "cdf" or "pdf" as input.}
 
 \item{n.grid}{integer.}
 
@@ -27,15 +29,21 @@ coPtourplot(copula, FUN, n.grid = 26, delta = 0, nlevels = 20,
 \item{ylab}{character.}
 }
 \value{
-A contourplot with the vales given by FUN for a copula of the form given by the supplied copula object.
+A contourplot with the values given by FUN for a copula of the form
+given by the supplied copula object.
 }
 \description{
 Gives a contourplot of a given copula object for a specified Function
 }
 \examples{
 \donttest{
-exC <- copu(Type = "Clayton", par = 5, dim = 2)
-exS <- rCop(copula = exC, n = 1000)
+exCop <- ClayCop(par = 5, dim = 2)
+#Plotting the cdf
+coPtourplot(copula = exCop, FUN = "cdf", n.grid = 26, delta = 0, nlevels = 20,
+xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
+#Plotting the pdf
+coPtourplot(copula = exCop, FUN = "pdf", n.grid = 26, delta = 0, nlevels = 20,
+xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
 }
 
 }
