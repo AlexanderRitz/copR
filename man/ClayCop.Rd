@@ -21,7 +21,11 @@ A list of class "ClayCop" with elements
 \item{distribution}{A list consisting of cdf and pdf}
 }
 \description{
-Constructs a ClayCop object.
+Constructs a ClayCop object, holding all relevant information on a given
+copula of the "Clayton" family. A parameter theta and the number of
+dimension has to be supplied. Theta can only take positive values.
+If the supplied parameter is too close to zero, a warning will be given;
+the use of an Independence copula is recommended in this case.
 }
 \examples{
 \donttest{
