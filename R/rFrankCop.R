@@ -17,7 +17,7 @@ rCop.FrankCop <- function (copula = NULL, n = 0) {
       q <- 1 - exp(log(1 - theta) * U2)
       if (U1[i] <= q ^ 2) {
         V[i] <- floor(1 + (log(U1[i]) / log(q)))
-      } else if (q ^ 2 < U1[i] & U1[i] <= q) {
+      } else if (q ^ 2 < U1[i] && U1[i] <= q) {
         V[i] <- 1
       } else if (U1[i] > q) {
         V[i] <- 2
