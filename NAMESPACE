@@ -2,7 +2,7 @@
 
 export(cLike)
 export(clayCop)
-export(coPpersplot)
+export(coPersplot)
 export(coPtourplot)
 export(dCop)
 export(frankCop)

@@ -1,9 +1,12 @@
 #' Perspective Plot of Copula
 #'
-#' Gives a perspective plot of a surface for a given copula object for a specified function.
+#' Gives a perspective plot of the surface of a given copula object for a
+#' specified function.
 #'
-#' @param copula A copula object. Supplies the copula to be used for the perspective plot.
-#' @param FUN function. Gives the function to be plotted.
+#' @param copula A copula object. Supplies the copula to be used for the
+#' perspective plot.
+#' @param FUN character. Decides whether the cdf or pdf of the supplied copula
+#' is to be plotted. Accepts "cdf" or "pdf" as input.
 #' @param n.grid integer.
 #' @param delta numeric.
 #' @param xlim integer.
@@ -25,13 +28,16 @@
 #'
 #' @examples
 #' \donttest{
-#' exC <- copu(Type = "Clayton", par = 5, dim = 2)
-#' exS <- rCop(copula = exC, n = 1000)
+#' exCop <- clayCop(par = 5, dim = 2)
+#' # Plotting the cdf
+#' coPersplot(copula = exCop, FUN = "cdf")
+#' # Plotting the pdf
+#' coPersplot(copula = exCop, FUN = "pdf")
 #' }
 #'
 #' @export
 
-coPpersplot <- function (copula,
+coPersplot <- function (copula,
                          FUN,
                          n.grid = 26,
                          delta = 0,
@@ -57,12 +63,19 @@ coPpersplot <- function (copula,
         gx <- seq(xlim[1] + delta, xlim[2] - delta, length.out = n.grid[1])
         gy <- seq(ylim[1] + delta, ylim[2] - delta, length.out = n.grid[2])
         theta_ <- copula$parameter
-        z <- app(
-          x = gx,
-          y = gy,
-          f = FUN,
-          par = theta_
-        )
+        if (FUN == "cdf") {
+          z <- app(x = gx,
+                   y = gy,
+                   f = copula$distribution$cdf,
+                   par = theta_)
+        } else if (FUN == "pdf") {
+          z <- app(x = gx,
+                   y = gy,
+                   f = copula$distribution$pdf,
+                   par = theta_)
+        } else {
+          stop("Please choose between plotting either the cdf or pdf of the copula.")
+        }
         if (is.null(zlim)) {
           zlim <- range(z, na.rm = TRUE)
           if (min(zlim, na.rm = TRUE) == max(zlim, na.rm = TRUE)) {

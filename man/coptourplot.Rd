@@ -33,15 +33,15 @@ A contourplot with the values given by FUN for a copula of the form
 given by the supplied copula object.
 }
 \description{
-Gives a contourplot of a given copula object for a specified Function
+Gives a contourplot of a given copula object for a specified function.
 }
 \examples{
 \donttest{
 exCop <- clayCop(par = 5, dim = 2)
-#Plotting the cdf
+# Plotting the cdf
 coPtourplot(copula = exCop, FUN = "cdf", n.grid = 26, delta = 0, nlevels = 20,
 xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
-#Plotting the pdf
+# Plotting the pdf
 coPtourplot(copula = exCop, FUN = "pdf", n.grid = 26, delta = 0, nlevels = 20,
 xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
 }
