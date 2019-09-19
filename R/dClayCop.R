@@ -1,6 +1,10 @@
-#Construction of Clayton pdf
+#' Construction of Clayton pdf
+#'
+#' @inheritParams dCop
+#'
+#' @export
 
-dCop.ClayCop <- function(copula, eva, u){
+dCop.clayCop <- function(copula, eva, u){
   d <- copula$dimension
   theta <- copula$parameter
   if (is.null(copula$distribution$cdf)) {

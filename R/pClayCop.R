@@ -1,7 +1,10 @@
-#Construction of Clayton cdf
+#' Construction of Clayton cdf
+#'
+#' @inheritParams pCop
+#'
+#' @export
 
-
-pCop.ClayCop <- function (copula, eva = FALSE, u) {
+pCop.clayCop <- function (copula, eva = FALSE, u) {
   d <- copula$dimension
   theta <- copula$parameter
   expr <- "u1^(-theta) - 1"

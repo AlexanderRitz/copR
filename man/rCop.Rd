@@ -12,7 +12,8 @@ rCop(copula = NULL, n = 0)
 \item{n}{integer. Supplies the desired number of observations.}
 }
 \value{
-A matrix containing n observations of d random variables, based on the family of the supplied copula object.
+A matrix containing n observations of d random variables, based on
+the family of the supplied copula object.
 }
 \description{
 Constructs a sample based on a given copula object.

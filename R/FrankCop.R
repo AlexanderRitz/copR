@@ -1,10 +1,10 @@
 #' Construction of copula object for the Frank family
 #'
-#' Constructs a FrankCop object.
+#' Constructs a frankCop object.
 #'
 #' @param par numeric. Supplies value of parameter of the copula to be constructed.
 #' @param dim interger. Supplies the number of dimensions of the copula to be constructed.
-#' @return A list of class "FrankCop" with elements
+#' @return A list of class "frankCop" with elements
 #' \item{dimension}{Number of dimensions}
 #' \item{expression}{List containing expression for generator function and its inverse}
 #' \item{parameter}{Parameter value of generator function}
@@ -14,13 +14,13 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- FrankCop(par = 5, dim = 2)
+#' exCop <- frankCop(par = 5, dim = 2)
 #' exCop
 #' }
 #'
 #' @export
 
-FrankCop <- function (par = NA,
+frankCop <- function (par = NA,
   dim = 2L) {
   fam <- "Frank"
   gen <- expression(-log(t * (exp(-theta * t) - 1) / (exp(-theta) - 1)))
@@ -39,7 +39,7 @@ FrankCop <- function (par = NA,
     family = fam,
     distribution = list(cdf = cdf, pdf = pdf)
   )
-  class(result) <- 'FrankCop'
+  class(result) <- 'frankCop'
   cdf <- pCop(result, eva = FALSE)
   result$distribution$cdf <- cdf
   pdf <- dCop(result, eva = FALSE)

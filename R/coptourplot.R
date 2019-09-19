@@ -1,6 +1,6 @@
 #' Contourplot of Copula
 #'
-#' Gives a contourplot of a given copula object for a specified Function
+#' Gives a contourplot of a given copula object for a specified function.
 #'
 #' @param copula A copula object. Supplies the copula to be used for the
 #' contourplot.
@@ -18,11 +18,11 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- ClayCop(par = 5, dim = 2)
-#' #Plotting the cdf
+#' exCop <- clayCop(par = 5, dim = 2)
+#' # Plotting the cdf
 #' coPtourplot(copula = exCop, FUN = "cdf", n.grid = 26, delta = 0, nlevels = 20,
 #' xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
-#' #Plotting the pdf
+#' # Plotting the pdf
 #' coPtourplot(copula = exCop, FUN = "pdf", n.grid = 26, delta = 0, nlevels = 20,
 #' xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
 #' }
@@ -30,14 +30,14 @@
 #' @export
 
 coPtourplot <- function (copula,
-  FUN,
-  n.grid = 26,
-  delta = 0,
-  nlevels = 20,
-  xlim = 0:1,
-  ylim = 0:1,
-  xlab = quote(u[1]),
-  ylab = quote(u[2])) {
+                         FUN,
+                         n.grid = 26,
+                         delta = 0,
+                         nlevels = 20,
+                         xlim = 0:1,
+                         ylim = 0:1,
+                         xlab = quote(u[1]),
+                         ylab = quote(u[2])) {
   if (copula$dimension == 2 & n.grid >= 2) {
     if (length(n.grid) == 1) {
       n.grid <- rep(n.grid, 2)
@@ -45,12 +45,19 @@ coPtourplot <- function (copula,
     if (length(n.grid) == 2) {
       if (0 <= delta && delta < (1 / 2)) {
         gx <- seq(xlim[1] + delta, xlim[2] - delta, length.out = n.grid[1])
-        gy <- seq(ylim[1] + delta, ylim[2] - delta, length.out = n.grid[2])
+        gy <-
+          seq(ylim[1] + delta, ylim[2] - delta, length.out = n.grid[2])
         theta <- copula$parameter
         if (FUN == "cdf") {
-          value <- app(x = gx, y = gy, f = copula$distribution$cdf, par = theta)
+          value <- app(x = gx,
+                       y = gy,
+                       f = copula$distribution$cdf,
+                       par = theta)
         } else if (FUN == "pdf") {
-          value <- app(x = gx, y = gy, f = copula$distribution$pdf, par = theta)
+          value <- app(x = gx,
+                       y = gy,
+                       f = copula$distribution$pdf,
+                       par = theta)
         } else {
           stop("Please choose between plotting either the cdf or pdf of the copula.")
         }
@@ -74,6 +81,8 @@ coPtourplot <- function (copula,
   } else if (n.grid < 2) {
     stop("Please supply a higher grid density (>= 2)")
   } else {
-    stop("Please check the number of dimensions of the supplied copula, only the bivariate case is supported")
+    stop(
+      "Please check the number of dimensions of the supplied copula, only the bivariate case is supported"
+    )
   }
 }

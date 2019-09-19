@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- ClayCop(par = 5, dim = 2)
+#' exCop <- clayCop(par = 5, dim = 2)
 #' exPDF <- dCop(exCop, eva = FALSE)
 #' #In case evaluation of the pdf is wanted:
 #' exPDFval <- dCop(exCop, eva = TRUE, u = c(0.5, 0.5))
