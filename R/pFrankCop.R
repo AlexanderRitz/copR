@@ -1,7 +1,7 @@
-#Construction of Frank cdf
+# Construction of Frank cdf
 
 
-pCop.FrankCop <- function (copula, eva = FALSE, u) {
+pCop.frankCop <- function (copula, eva = FALSE, u) {
   d <- copula$dimension
   theta <- copula$parameter
   expr <- "-log((exp(-theta * u1) - 1) / (exp(-theta) - 1) )"

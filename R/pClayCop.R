@@ -1,7 +1,7 @@
-#Construction of Clayton cdf
+# Construction of Clayton cdf
 
 
-pCop.ClayCop <- function (copula, eva = FALSE, u) {
+pCop.clayCop <- function (copula, eva = FALSE, u) {
   d <- copula$dimension
   theta <- copula$parameter
   expr <- "u1^(-theta) - 1"

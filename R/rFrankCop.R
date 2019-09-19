@@ -1,7 +1,7 @@
-#Generating random samples of a Frank copula based on the algorithm of Marshall and Olkin (1988)
+# Generating random samples of a Frank copula based on the algorithm of Marshall and Olkin (1988)
 
 
-rCop.FrankCop <- function (copula = NULL, n = 0) {
+rCop.frankCop <- function (copula = NULL, n = 0) {
   theta <- copula$par
   theta <- (1 - exp(-theta))
   d <- copula$dim
@@ -25,7 +25,6 @@ rCop.FrankCop <- function (copula = NULL, n = 0) {
     }
   }
 
-
   X <- matrix(data = NA,
     nrow = n,
     ncol = d)
@@ -39,7 +38,7 @@ rCop.FrankCop <- function (copula = NULL, n = 0) {
 
   for (j in 1:d) {
     for (i in 1:n) {
-      U[i, j] <- InvGenEval(s = (-log(X[i, j]) / V[i]), copula = copula)
+      U[i, j] <- invGenEval(s = (-log(X[i, j]) / V[i]), copula = copula)
     }
   }
   return(U)

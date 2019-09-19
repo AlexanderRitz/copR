@@ -31,7 +31,7 @@
 #'
 #' @export
 
-coppersplot <- function (copula,
+coPpersplot <- function (copula,
                          FUN,
                          n.grid = 26,
                          delta = 0,

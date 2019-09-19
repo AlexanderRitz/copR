@@ -7,7 +7,7 @@
 #' @return The value of the inverse generator function of the given copula object at input x.
 #'
 
-InvGenEval <- function (s, copula) {
+invGenEval <- function (s, copula) {
   if (length(copula$parameter == 1L)) {
     param <- copula$parameter
     theta <- param

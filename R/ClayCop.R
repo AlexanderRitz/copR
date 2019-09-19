@@ -1,6 +1,6 @@
 #' Construction of copula object for the Clayton family
 #'
-#' Constructs a ClayCop object, holding all relevant information on a given
+#' Constructs a clayCop object, holding all relevant information on a given
 #' copula of the "Clayton" family. A parameter theta and the number of
 #' dimension has to be supplied. Theta can only take positive values.
 #' If the supplied parameter is too close to zero, a warning will be given;
@@ -8,7 +8,7 @@
 #'
 #' @param par numeric. Supplies value of parameter of the copula to be constructed.
 #' @param dim interger. Supplies the number of dimensions of the copula to be constructed.
-#' @return A list of class "ClayCop" with elements
+#' @return A list of class "clayCop" with elements
 #' \item{dimension}{Number of dimensions}
 #' \item{expression}{List containing expression for generator function and its inverse}
 #' \item{parameter}{Parameter value of generator function}
@@ -18,14 +18,14 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- ClayCop(par = 5, dim = 2)
+#' exCop <- clayCop(par = 5, dim = 2)
 #' summary(exCop)
 #' }
 #'
 #' @export
 
 
-ClayCop <- function (par = NA,
+clayCop <- function (par = NA,
   dim = 2L) {
   if (par < 0) {
     stop("Parameter of Clayton family can not take negative values!")
@@ -49,7 +49,7 @@ ClayCop <- function (par = NA,
       family = fam,
       distribution = list(cdf = cdf, pdf = pdf)
     )
-    class(result) <- 'ClayCop'
+    class(result) <- 'clayCop'
     cdf <- pCop(result, eva = FALSE)
     result$distribution$cdf <- cdf
     pdf <- dCop(result, eva = FALSE)

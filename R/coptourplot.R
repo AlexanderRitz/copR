@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- ClayCop(par = 5, dim = 2)
+#' exCop <- clayCop(par = 5, dim = 2)
 #' #Plotting the cdf
 #' coPtourplot(copula = exCop, FUN = "cdf", n.grid = 26, delta = 0, nlevels = 20,
 #' xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))

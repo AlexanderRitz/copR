@@ -1,7 +1,7 @@
-#Construction of Frank pdf
+# Construction of Frank pdf
 
 
-dCop.FrankCop <- function(copula, eva, u){
+dCop.frankCop <- function(copula, eva, u){
   d <- copula$dimension
   theta <- copula$parameter
   if (is.null(copula$distribution$cdf)) {
