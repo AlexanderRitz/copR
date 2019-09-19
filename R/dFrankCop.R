@@ -1,4 +1,8 @@
-# Construction of Frank pdf
+#' Construction of Frank pdf
+#'
+#' @inheritParams dCop
+#'
+#' @export
 
 
 dCop.frankCop <- function(copula, eva, u){

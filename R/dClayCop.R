@@ -1,4 +1,8 @@
-# Construction of Clayton pdf
+#' Construction of Clayton pdf
+#'
+#' @inheritParams dCop
+#'
+#' @export
 
 dCop.clayCop <- function(copula, eva, u){
   d <- copula$dimension

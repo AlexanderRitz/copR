@@ -1,5 +1,8 @@
-# Construction of Clayton cdf
-
+#' Construction of Clayton cdf
+#'
+#' @inheritParams pCop
+#'
+#' @export
 
 pCop.clayCop <- function (copula, eva = FALSE, u) {
   d <- copula$dimension

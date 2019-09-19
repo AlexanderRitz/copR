@@ -4,7 +4,8 @@
 #'
 #' @param copula A copula object. Decides the copula to sample from.
 #' @param n integer. Supplies the desired number of observations.
-#' @return A matrix containing n observations of d random variables, based on the family of the supplied copula object.
+#' @return A matrix containing n observations of d random variables, based on
+#' the family of the supplied copula object.
 #'
 #' @examples
 #' \donttest{

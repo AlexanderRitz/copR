@@ -1,5 +1,8 @@
-# Construction of Frank cdf
-
+#' Construction of Frank cdf
+#'
+#' @inheritParams pCop
+#'
+#' @export
 
 pCop.frankCop <- function (copula, eva = FALSE, u) {
   d <- copula$dimension

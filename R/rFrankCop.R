@@ -1,4 +1,9 @@
-# Generating random samples of a Frank copula based on the algorithm of Marshall and Olkin (1988)
+#' Generating random samples of a Frank copula based on the algorithm of
+#' Marshall and Olkin (1988)
+#'
+#' @inheritParams rCop
+#'
+#' @export
 
 
 rCop.frankCop <- function (copula = NULL, n = 0) {
