@@ -1,20 +1,26 @@
 #' Construction of copula object for the Clayton family
 #'
 #' Constructs a clayCop object, holding all relevant information on a given
-#' copula of the "Clayton" family. A parameter theta and the number of
-#' dimension has to be supplied. Theta can only take positive values.
-#' If the supplied parameter is too close to zero, a warning will be given;
-#' the use of an Independence copula is recommended in this case.
+#' copula of the "Clayton" family. A parameter called theta and the number of
+#' dimensions has to be supplied. In this implementation Theta can only take
+#' positive values. If the supplied parameter is too close to zero, you will be
+#' informed that the use of an Independence copula is recommended in this case.
 #'
-#' @param par numeric. Supplies value of parameter of the copula to be constructed.
-#' @param dim interger. Supplies the number of dimensions of the copula to be constructed.
+#' @param par numeric. Supplies value of parameter of the copula to be
+#' constructed.
+#' @param dim integer. Supplies the number of dimensions of the copula to be
+#' constructed.
 #' @return A list of class "clayCop" with elements
 #' \item{dimension}{Number of dimensions}
-#' \item{expression}{List containing expression for generator function and its inverse}
+#' \item{generator}{List containing expressions for the generator function and
+#' its inverse}
 #' \item{parameter}{Parameter value of generator function}
-#' \item{prange}{vector of upper and lower bounds of the parameter}
-#' \item{family}{Name of constructed copula, e.g. "Clayton"}
-#' \item{distribution}{A list consisting of cdf and pdf}
+#' \item{prange}{Vector of upper and lower bounds of permitted parameter values}
+#' \item{family}{Name of constructed copula family, e.g. "Clayton"}
+#' \item{distribution}{A list consisting of expressions for cdf and pdf}
+#' The expressions can be evaluated for the parameter theta and additionally the
+#' variable "t" in case of the generator function, "s" for its inverse and
+#' variables "ui" in the case of cdf and pdf.
 #'
 #' @examples
 #' \donttest{
@@ -27,10 +33,26 @@
 
 clayCop <- function (par = NA,
   dim = 2L) {
-  if (par < 0) {
-    stop("Parameter of Clayton family can not take negative values!")
-  } else if (abs(par) <= .Machine$double.eps) {
-    stop("Parameter is close enough to zero for a change to the Independence copula")
+  if (length(par) != 1L) {
+    stop(
+      "The Clayton family only relies on a single parameter."
+      )
+  } else if (length(dim) != 1) {
+    stop(
+      "Dimension not of correct format, please supply a single integer."
+    )
+  } else if (par < 0) {
+    stop(
+      "Parameter of Clayton family can not take negative values!"
+      )
+  } else if (abs(par) <= (.Machine$double.eps ^ (1 / 2))) {
+    stop(
+      "Parameter is close enough to zero to change to the Independence copula"
+      )
+  } else if (dim < 2) {
+    stop(
+      "A copula can only be constructed for at least 2 dimensions!"
+      )
   } else {
     fam <- "Clayton"
     gen <- expression(t ^ (-theta) - 1)
@@ -43,7 +65,7 @@ clayCop <- function (par = NA,
     pdf <- NULL
     result <- list(
       dimension = dim,
-      expressions = list(gen = gen, invg = invg),
+      generator = list(gen = gen, invg = invg),
       parameter = par,
       prange = range,
       family = fam,

@@ -16,16 +16,21 @@ dCop.frankCop <- function(copula, eva, u){
       pdf <- stats::D(pdf, paste("u", i, sep = ""))
     }
     if (eva == FALSE) {
-      return(pdf)
+      return(parse(text = paste(as.character(pdf)[2], as.character(pdf)[1],
+        as.character(pdf)[3], sep = "")))
     } else {
       if (length(u) == d) {
+        if (any(u >= 1) || any(u <= 0)) {
+          return(0)
+        }
         for (i in 1:d) {
           assign(paste("u", i, sep = ""), u[i])
         }
         eval(pdf)
       } else {
         stop(
-          "Supplied data vector not of appropriate length. Has to be of the same dimension as the supplied copula."
+          "Supplied data vector not of appropriate length. Has to be of the same
+          dimension as the supplied copula."
         )
       }
     }

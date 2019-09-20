@@ -19,6 +19,8 @@ pCop.frankCop <- function (copula, eva = FALSE, u) {
     parse(text = expr)
   } else {
     if (length(u) == d) {
+      u[u >= 1] <- 1
+      u[u <= 0] <- 0
       for (i in 1:d) {
         assign(paste("u", i, sep = ""), u[i])
       }
@@ -26,7 +28,8 @@ pCop.frankCop <- function (copula, eva = FALSE, u) {
       eval(parse(text = expr))
     } else {
       stop(
-        "Supplied data vector not of appropriate length. Has to be of the same dimension as the supplied copula."
+        "Supplied data vector not of appropriate length. Has to be of the same
+        dimension as the supplied copula."
       )
     }
   }
