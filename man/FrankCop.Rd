@@ -30,8 +30,9 @@ variables "ui" in the case of cdf and pdf.
 Constructs a frankCop object, holding all relevant information on a given
 copula of the "Frank" family. A parameter called theta and the number of
 dimensions has to be supplied. In this implementation Theta can only take
-positive values. If the supplied parameter is too close to zero, you will be
-informed that the use of an Independence copula is recommended in this case.
+negative values in the bivariate case. If the supplied parameter is too close
+to zero, you will be informed that the use of an Independence copula is
+recommended in this case.
 }
 \examples{
 \donttest{

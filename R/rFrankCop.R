@@ -7,6 +7,9 @@
 
 
 rCop.frankCop <- function (copula = NULL, n = 0) {
+  if (n <= 0) {
+    stop("Sample size has to be greater than 0")
+  }
   theta <- copula$parameter
   d <- copula$dim
   if (d == 2) {

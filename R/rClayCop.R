@@ -6,6 +6,9 @@
 #' @export
 
 rCop.clayCop <- function (copula = NULL, n = 0) {
+  if (n <= 0) {
+    stop("Sample size has to be greater than 0")
+  }
   theta <- copula$par
   d <- copula$dim
   V <- stats::rgamma(n = n,
