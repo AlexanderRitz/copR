@@ -20,6 +20,12 @@ test_that("Frank samples are of correct dimensions", {
   expect_equal(dim(fcs3), c(100L, 2L))
 })
 
+test_that("Independence samples are of correct dimensions", {
+  ic1 <- indCop(dim = 3)
+  ics1 <- rCop(ic1, n = 100)
+  expect_equal(dim(ics1), c(100L, 3L))
+})
+
 test_that("Clayton samples do not contain NA, NULL or NaN", {
   cc2 <- clayCop(par = 5, dim = 3)
   ccs2 <- rCop(cc2, n = 100)
@@ -54,4 +60,14 @@ test_that("Frank samples do not contain NA or NaN", {
   fc9 <- frankCop(par = -5, dim = 2)
   fcs9 <- rCop(fc9, n = 100)
   expect_equal(any(is.nan((fcs9))), FALSE)
+})
+
+test_that("Independence samples do not contain NA, NULL or NaN", {
+  ic2 <- indCop(dim = 3)
+  ics2 <- rCop(ic2, n = 100)
+  expect_equal(anyNA(ics2), FALSE)
+
+  ic3 <- indCop(dim = 3)
+  ics3 <- rCop(ic3, n = 100)
+  expect_equal(any(is.nan((ics3))), FALSE)
 })

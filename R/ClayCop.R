@@ -33,7 +33,11 @@
 
 clayCop <- function (par = NA,
   dim = 2L) {
-  if (length(par) != 1L) {
+  if (is.na(par) || is.null(par)) {
+    stop(
+      "Parameter value has to be supplied."
+    )
+  } else if (length(par) != 1L) {
     stop(
       "The Clayton family only relies on a single parameter."
       )

@@ -78,8 +78,10 @@ coPersplot <- function (copula,
         } else if (FUN == "pdf") {
           z <- app(x = gx,  y = gy, f = copula$distribution$pdf, par = theta_)
         } else {
-          stop("Please choose between plotting either the cdf or pdf of the
-               copula.")
+          stop(
+          "Please choose between plotting either the cdf or pdf of the
+               copula."
+            )
         }
 
         # Calculate colors of facets corresponding to z-values at facet centres
@@ -107,16 +109,25 @@ coPersplot <- function (copula,
                         ...
         )
       } else {
-        stop("delta has to take a value greater or equal to zero and smaller than 1/2")
+        stop(
+          "delta has to take a value greater or equal to zero and smaller than
+          1/2"
+          )
       }
     } else {
-      stop("n.grid has to be either of length 1 or 2, higher dimensions are not supported.")
+      stop(
+        "n.grid has to be either of length 1 or 2, higher dimensions are not
+        supported."
+        )
     }
   } else if (n.grid < 2) {
-    stop("Please supply a higher grid density (>= 2)")
+    stop(
+      "Please supply a higher grid density (>= 2)"
+      )
   } else {
     stop(
-      "Please check the number of dimensions of the supplied copula, only the bivariate case is supported"
+      "Please check the number of dimensions of the supplied copula, only the
+      bivariate case is supported"
     )
   }
 }
