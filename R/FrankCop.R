@@ -19,7 +19,7 @@
 #' \item{prange}{Vector of upper and lower bounds of the parameter}
 #' \item{family}{Name of constructed copula, e.g. "Frank"}
 #' \item{distribution}{A list consisting of cdf and pdf}
-#'#' The expressions can be evaluated for the parameter theta and additionally the
+#' The expressions can be evaluated for the parameter theta and additionally the
 #' variable "t" in case of the generator function, "s" for its inverse and
 #' variables "ui" in the case of cdf and pdf.
 #'
@@ -78,7 +78,7 @@ frankCop <- function (par = NA,
       family = fam,
       distribution = list(cdf = cdf, pdf = pdf)
     )
-    class(result) <- 'frankCop'
+    class(result) <- c("frankCop", "copula")
     cdf <- pCop(result, eva = FALSE)
     result$distribution$cdf <- cdf
     pdf <- dCop(result, eva = FALSE)

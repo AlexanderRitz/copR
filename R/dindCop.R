@@ -4,7 +4,7 @@
 #'
 #' @export
 
-dCop.indCop <- function(copula, eva, u) {
+dCop.indCop <- function (copula, eva, u) {
   if (is.null(copula$distribution$pdf)) {
     d <- copula$dimension
     if (is.null(copula$distribution$cdf)) {

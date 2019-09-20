@@ -39,7 +39,7 @@ indCop <- function (dim = 2L) {
       family = fam,
       distribution = list(cdf = cdf, pdf = pdf)
     )
-    class(result) <- 'indCop'
+    class(result) <- c("indCop", "copula")
     cdf <- pCop(result, eva = FALSE)
     result$distribution$cdf <- cdf
     pdf <- dCop(result, eva = FALSE)

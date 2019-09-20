@@ -75,7 +75,7 @@ clayCop <- function (par = NA,
       family = fam,
       distribution = list(cdf = cdf, pdf = pdf)
     )
-    class(result) <- 'clayCop'
+    class(result) <- c("clayCop", "copula")
     cdf <- pCop(result, eva = FALSE)
     result$distribution$cdf <- cdf
     pdf <- dCop(result, eva = FALSE)
