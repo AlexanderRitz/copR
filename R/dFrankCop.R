@@ -1,12 +1,12 @@
 #' Construction of Frank pdf
 #'
-#' @inheritParams dCop
+#' @inheritParams dcop
 #'
 #' @export
 
 
 
-dCop.frankCop <- function(copula, eva, u) {
+dcop.frankcop <- function(copula, eva, u) {
   if (is.null(copula$distribution$pdf)) {
     d <- copula$dimension
     theta <- copula$parameter

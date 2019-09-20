@@ -25,18 +25,18 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- clayCop(par = 0.5, dim = 2)
+#' excop <- claycop(par = 0.5, dim = 2)
 #' # Plotting the cdf
-#' coPtourplot(copula = exCop, FUN = "cdf")
+#' coptourplot(copula = excop, FUN = "cdf")
 #' # Plotting the pdf
-#' coPtourplot(copula = exCop, FUN = "pdf", n.grid = 42, nlevels = 16,
+#' coptourplot(copula = excop, FUN = "pdf", n.grid = 42, nlevels = 16,
 #'             col.pal = "YlGnBu",
 #'             plot.title = title(main = "Clayton Copula PDF"))
 #' }
 #'
 #' @export
 
-coPtourplot <- function (copula,
+coptourplot <- function (copula,
                          FUN,
                          n.grid = 26,
                          delta = 0,

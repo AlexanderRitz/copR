@@ -1,10 +1,10 @@
 #' Construction of Independence cdf
 #'
-#' @inheritParams pCop
+#' @inheritParams pcop
 #'
 #' @export
 
-pCop.indCop <- function (copula, eva = FALSE, u) {
+pcop.indcop <- function (copula, eva = FALSE, u) {
   if (is.null(copula$distribution$cdf)) {
     d <- copula$dimension
     expr <- "u1"

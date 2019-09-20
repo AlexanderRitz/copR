@@ -1,10 +1,10 @@
 #' Construction of Frank cdf
 #'
-#' @inheritParams pCop
+#' @inheritParams pcop
 #'
 #' @export
 
-pCop.frankCop <- function (copula, eva = FALSE, u) {
+pcop.frankcop <- function (copula, eva = FALSE, u) {
   if (is.null(copula$distribution$cdf)) {
   d <- copula$dimension
   theta <- copula$parameter

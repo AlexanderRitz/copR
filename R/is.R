@@ -1,34 +1,34 @@
-#' Utility to check inheritance of copula objects for "clayCop"
+#' Utility to check inheritance of copula objects for "claycop"
 #'
 #' @param copula A copula object.
 #' @return TRUE or FALSE depending on whether the supplied copula object is of
 #' the class "claycop".
 #'
 
-is.clayCop <- function (copula) {
-  inherits(copula, "clayCop")
+is.claycop <- function (copula) {
+  inherits(copula, "claycop")
 }
 
-#' Utility to check inheritance of copula objects for "frankCop"
+#' Utility to check inheritance of copula objects for "frankcop"
 #'
 #' @param copula A copula object.
 #' @return TRUE or FALSE depending on whether the supplied copula object is of
 #' the class "frankcop".
 #'
 
-is.frankCop <- function (copula) {
-  inherits(copula, "frankCop")
+is.frankcop <- function (copula) {
+  inherits(copula, "frankcop")
 }
 
-#' Utility to check inheritance of copula objects for "indCop"
+#' Utility to check inheritance of copula objects for "indcop"
 #'
 #' @param copula A copula object.
 #' @return TRUE or FALSE depending on whether the supplied copula object is of
 #' the class "indcop".
 #'
 
-is.indCop <- function (copula) {
-  inherits(copula, "indCop")
+is.indcop <- function (copula) {
+  inherits(copula, "indcop")
 }
 
 #' Utility to check inheritance of objects for "copula"

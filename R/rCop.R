@@ -9,13 +9,13 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- ClayCop(par = 5, dim = 2)
-#' exSam <- rCop(copula = exCop, n = 1000)
-#' plot(exSam, ylim = c(0, 1), xlim = c(0, 1), ylab = "U2", xlab = "U1")
+#' excop <- Claycop(par = 5, dim = 2)
+#' exsam <- rcop(copula = excop, n = 1000)
+#' plot(exsam, ylim = c(0, 1), xlim = c(0, 1), ylab = "U2", xlab = "U1")
 #' }
 #'
 #' @export
 
-rCop <- function (copula = NULL, n = 0) {
-  UseMethod("rCop")
+rcop <- function (copula = NULL, n = 0) {
+  UseMethod("rcop")
 }

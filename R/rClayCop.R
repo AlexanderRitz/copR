@@ -1,11 +1,11 @@
 #' Generating random samples of a Clayton copula based on the algorithm of
 #' Marshall and Olkin (1988)
 #'
-#' @inheritParams rCop
+#' @inheritParams rcop
 #'
 #' @export
 
-rCop.clayCop <- function (copula = NULL, n = 0) {
+rcop.claycop <- function (copula = NULL, n = 0) {
   if (n <= 0) {
     stop(
       "Sample size has to be greater than 0"
@@ -29,7 +29,7 @@ rCop.clayCop <- function (copula = NULL, n = 0) {
 
   for (j in 1:d) {
     for (i in 1:n) {
-      U[i, j] <- invGenEval(s = (-log(X[i, j]) / V[i]), copula = copula)
+      U[i, j] <- invgeneval(s = (-log(X[i, j]) / V[i]), copula = copula)
     }
   }
   return(U)

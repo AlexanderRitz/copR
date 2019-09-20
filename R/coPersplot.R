@@ -35,17 +35,17 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- clayCop(par = 1, dim = 2)
+#' excop <- claycop(par = 1, dim = 2)
 #' # Plotting the cdf
-#' coPersplot(copula = exCop, FUN = "cdf")
+#' copersplot(copula = excop, FUN = "cdf")
 #' # Plotting the pdf
-#' coPersplot(copula = exCop, FUN = "pdf", n.grid = 20, col.pal = "Plasma",
+#' copersplot(copula = excop, FUN = "pdf", n.grid = 20, col.pal = "Plasma",
 #'            border = NULL, main = "Clayton Copula PDF", cex.main = 0.8)
 #' }
 #'
 #' @export
 
-coPersplot <- function (copula,
+copersplot <- function (copula,
                          FUN,
                          n.grid = 26,
                          delta = 0,

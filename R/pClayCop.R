@@ -1,10 +1,10 @@
 #' Construction of Clayton cdf
 #'
-#' @inheritParams pCop
+#' @inheritParams pcop
 #'
 #' @export
 
-pCop.clayCop <- function (copula, eva = FALSE, u) {
+pcop.claycop <- function (copula, eva = FALSE, u) {
   if (is.null(copula$distribution$cdf)) {
     d <- copula$dimension
     theta <- copula$parameter

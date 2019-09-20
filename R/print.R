@@ -9,7 +9,7 @@
 
 
 print.copula <- function (x, force = FALSE, ...) {
-  if (is.indCop(x) == TRUE) {
+  if (is.indcop(x) == TRUE) {
     if (x$dimension < 10) {
       cat(
         paste(

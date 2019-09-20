@@ -1,6 +1,6 @@
 #' Construction of copula object for the Clayton family
 #'
-#' Constructs a clayCop object, holding all relevant information on a given
+#' Constructs a claycop object, holding all relevant information on a given
 #' copula of the "Clayton" family. A parameter called theta and the number of
 #' dimensions has to be supplied. In this implementation Theta can only take
 #' positive values. If the supplied parameter is too close to zero, you will be
@@ -10,7 +10,7 @@
 #' constructed.
 #' @param dim integer. Supplies the number of dimensions of the copula to be
 #' constructed.
-#' @return A list of class "clayCop" with elements
+#' @return A list of class "claycop" with elements
 #' \item{dimension}{Number of dimensions}
 #' \item{generator}{List containing expressions for the generator function and
 #' its inverse}
@@ -24,14 +24,14 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- clayCop(par = 5, dim = 2)
-#' summary(exCop)
+#' excop <- claycop(par = 5, dim = 2)
+#' summary(excop)
 #' }
 #'
 #' @export
 
 
-clayCop <- function (par = NA,
+claycop <- function (par = NA,
   dim = 2L) {
    if (length(par) != 1L) {
     stop(
@@ -75,10 +75,10 @@ clayCop <- function (par = NA,
       family = fam,
       distribution = list(cdf = cdf, pdf = pdf)
     )
-    class(result) <- c("clayCop", "copula")
-    cdf <- pCop(result, eva = FALSE)
+    class(result) <- c("claycop", "copula")
+    cdf <- pcop(result, eva = FALSE)
     result$distribution$cdf <- cdf
-    pdf <- dCop(result, eva = FALSE)
+    pdf <- dcop(result, eva = FALSE)
     result$distribution$pdf <- pdf
 
     return(result)

@@ -1,6 +1,6 @@
 #' Construction of copula object for the Frank family
 #'
-#' Constructs a frankCop object, holding all relevant information on a given
+#' Constructs a frankcop object, holding all relevant information on a given
 #' copula of the "Frank" family. A parameter called theta and the number of
 #' dimensions has to be supplied. In this implementation Theta can only take
 #' negative values in the bivariate case. If the supplied parameter is too close
@@ -11,7 +11,7 @@
 #' constructed.
 #' @param dim integer. Supplies the number of dimensions of the copula to be
 #' constructed.
-#' @return A list of class "frankCop" with elements
+#' @return A list of class "frankcop" with elements
 #' \item{dimension}{Number of dimensions}
 #' \item{generator}{List containing expressions for the generator function and
 #' its inverse}
@@ -25,13 +25,13 @@
 #'
 #' @examples
 #' \donttest{
-#' exCop <- frankCop(par = 5, dim = 2)
-#' summary(exCop)
+#' excop <- frankcop(par = 5, dim = 2)
+#' summary(excop)
 #' }
 #'
 #' @export
 
-frankCop <- function (par = NA,
+frankcop <- function (par = NA,
   dim = 2L) {
   if (length(par) != 1L) {
     stop(
@@ -78,10 +78,10 @@ frankCop <- function (par = NA,
       family = fam,
       distribution = list(cdf = cdf, pdf = pdf)
     )
-    class(result) <- c("frankCop", "copula")
-    cdf <- pCop(result, eva = FALSE)
+    class(result) <- c("frankcop", "copula")
+    cdf <- pcop(result, eva = FALSE)
     result$distribution$cdf <- cdf
-    pdf <- dCop(result, eva = FALSE)
+    pdf <- dcop(result, eva = FALSE)
     result$distribution$pdf <- pdf
 
     return(result)

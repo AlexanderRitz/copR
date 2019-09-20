@@ -1,10 +1,10 @@
 #' Generating random samples of an Independence copula
 #'
-#' @inheritParams rCop
+#' @inheritParams rcop
 #'
 #' @export
 
-rCop.indCop <- function (copula = NULL, n = 0) {
+rcop.indcop <- function (copula = NULL, n = 0) {
   if (n <= 0) {
     stop(
       "Sample size has to be greater than 0"

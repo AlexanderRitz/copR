@@ -1,6 +1,7 @@
 #' Utility to construct matrix of function values for coptourplot
 #'
-#' Calculates a matrix containing the function values for a supplied function and two input variables.
+#' Calculates a matrix containing the function values for a supplied function
+#' and two input variables.
 #'
 #' @param x numeric. First input variable.
 #' @param y numeric. Second input variable.
@@ -9,7 +10,7 @@
 #' @return A matrix containing the function values of f for the inputs x and y.
 #'
 
-app <- function(x, y, f, par) {
+app <- function (x, y, f, par) {
   v <- matrix(NA, nrow = length(x), ncol = length(y))
   for (i in 1:length(x)) {
     for (j in 1:length(y)) {

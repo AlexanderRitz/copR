@@ -1,27 +1,27 @@
 #' Construction of Independence copula object
 #'
-#' Constructs a indCop object, holding all relevant information on an
+#' Constructs a indcop object, holding all relevant information on an
 #' Independence copula. The number of dimensions has to be supplied.
 #'
 #' @param dim integer. Supplies the number of dimensions of the copula to be
 #' constructed.
-#' @return A list of class "indCop" with elements
+#' @return A list of class "indcop" with elements
 #' \item{dimension}{Number of dimensions}
-#' \item{family}{Name of constructed copula family, e.g. "Clayton"}
+#' \item{family}{Name of constructed copula family, here "Independence"}
 #' \item{distribution}{A list consisting of expressions for cdf and pdf}
 #' The expressions can be evaluated for the variables "ui" in the case of cdf
 #' and pdf.
 #'
 #' @examples
 #' \donttest{
-#' exCop <- indCop(dim = 2)
-#' summary(exCop)
+#' excop <- indcop(dim = 2)
+#' summary(excop)
 #' }
 #'
 #' @export
 
 
-indCop <- function (dim = 2L) {
+indcop <- function (dim = 2L) {
   if (length(dim) != 1) {
     stop(
       "Dimension not of correct format, please supply a single integer."
@@ -39,10 +39,10 @@ indCop <- function (dim = 2L) {
       family = fam,
       distribution = list(cdf = cdf, pdf = pdf)
     )
-    class(result) <- c("indCop", "copula")
-    cdf <- pCop(result, eva = FALSE)
+    class(result) <- c("indcop", "copula")
+    cdf <- pcop(result, eva = FALSE)
     result$distribution$cdf <- cdf
-    pdf <- dCop(result, eva = FALSE)
+    pdf <- dcop(result, eva = FALSE)
     result$distribution$pdf <- pdf
 
     return(result)

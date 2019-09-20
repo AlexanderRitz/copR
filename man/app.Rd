@@ -19,5 +19,6 @@ app(x, y, f, par)
 A matrix containing the function values of f for the inputs x and y.
 }
 \description{
-Calculates a matrix containing the function values for a supplied function and two input variables.
+Calculates a matrix containing the function values for a supplied function
+and two input variables.
 }
