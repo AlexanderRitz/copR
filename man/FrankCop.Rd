@@ -7,26 +7,37 @@
 frankCop(par = NA, dim = 2L)
 }
 \arguments{
-\item{par}{numeric. Supplies value of parameter of the copula to be constructed.}
+\item{par}{numeric. Supplies value of parameter of the copula to be
+constructed.}
 
-\item{dim}{interger. Supplies the number of dimensions of the copula to be constructed.}
+\item{dim}{integer. Supplies the number of dimensions of the copula to be
+constructed.}
 }
 \value{
 A list of class "frankCop" with elements
 \item{dimension}{Number of dimensions}
-\item{expression}{List containing expression for generator function and its inverse}
+\item{generator}{List containing expressions for the generator function and
+its inverse}
 \item{parameter}{Parameter value of generator function}
-\item{prange}{vector of upper and lower bounds of the parameter}
+\item{prange}{Vector of upper and lower bounds of the parameter}
 \item{family}{Name of constructed copula, e.g. "Frank"}
 \item{distribution}{A list consisting of cdf and pdf}
+#' The expressions can be evaluated for the parameter theta and additionally the
+variable "t" in case of the generator function, "s" for its inverse and
+variables "ui" in the case of cdf and pdf.
 }
 \description{
-Constructs a frankCop object.
+Constructs a frankCop object, holding all relevant information on a given
+copula of the "Frank" family. A parameter called theta and the number of
+dimensions has to be supplied. In this implementation Theta can only take
+negative values in the bivariate case. If the supplied parameter is too close
+to zero, you will be informed that the use of an Independence copula is
+recommended in this case.
 }
 \examples{
 \donttest{
 exCop <- frankCop(par = 5, dim = 2)
-exCop
+summary(exCop)
 }
 
 }

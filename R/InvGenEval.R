@@ -9,9 +9,8 @@
 
 invGenEval <- function (s, copula) {
   if (length(copula$parameter == 1L)) {
-    param <- copula$parameter
-    theta <- param
-    out <- eval(copula$expressions$invg[[1]])
+    theta <- copula$parameter
+    out <- eval(copula$generator$invg[[1]])
     return(out)
 
   } else {

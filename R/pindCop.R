@@ -1,19 +1,17 @@
-#' Construction of Clayton cdf
+#' Construction of Independence cdf
 #'
 #' @inheritParams pCop
 #'
 #' @export
 
-pCop.clayCop <- function (copula, eva = FALSE, u) {
+pCop.indCop <- function (copula, eva = FALSE, u) {
   if (is.null(copula$distribution$cdf)) {
     d <- copula$dimension
-    theta <- copula$parameter
-    expr <- "u1^(-theta) - 1"
+    expr <- "u1"
     for (i in 2:d) {
-      expr2 <- paste("u", i, "^(-theta) - 1", sep = "")
-      expr <- paste(expr, expr2, sep = " + ")
+      expr2 <- paste("u", i, sep = "")
+      expr <- paste(expr, expr2, sep = " * ")
     }
-    expr <- paste("(1 + (", expr, "))^(-1/theta)")
     if (eva == FALSE) {
       parse(text = expr)
     } else {
@@ -23,7 +21,6 @@ pCop.clayCop <- function (copula, eva = FALSE, u) {
         for (i in 1:d) {
           assign(paste("u", i, sep = ""), u[i])
         }
-        theta <- copula$parameter
         eval(parse(text = expr))
       } else {
         stop(
@@ -43,7 +40,6 @@ pCop.clayCop <- function (copula, eva = FALSE, u) {
       for (i in 1:d) {
         assign(paste("u", i, sep = ""), u[i])
       }
-      theta <- copula$parameter
       eval(expr)
     } else {
       stop(
