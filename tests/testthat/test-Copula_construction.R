@@ -44,15 +44,19 @@ test_that("invalid input for dim results in error", {
 test_that("invalid input for par results in error", {
   expect_error(cc5 <- clayCop(par = -2, dim = 3), "negative")
 
+  expect_error(cc6 <- clayCop(dim = 3), "supplied")
+
   expect_error(fc6 <- frankCop(par = -3, dim = 3), "dimensions")
 
-  expect_error(cc6 <- clayCop(par = c(2, 3), dim = 3), "single")
+  expect_error(fc7 <- frankCop(dim = 3), "supplied")
 
-  expect_error(fc7 <- frankCop(par = c(2, 3), dim = 3), "single")
+  expect_error(cc7 <- clayCop(par = c(2, 3), dim = 3), "single")
 
-  expect_error(cc7 <- clayCop(par = .Machine$double.eps, dim = 3),
+  expect_error(fc8 <- frankCop(par = c(2, 3), dim = 3), "single")
+
+  expect_error(cc8 <- clayCop(par = .Machine$double.eps, dim = 3),
     "Independence")
 
-  expect_error(fc8 <- frankCop(par = .Machine$double.eps, dim = 3),
+  expect_error(fc9 <- frankCop(par = .Machine$double.eps, dim = 3),
     "Independence")
 })
