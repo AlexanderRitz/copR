@@ -5,9 +5,9 @@
 \title{Perspective Plot of Copula}
 \usage{
 coPersplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
-  ylim = 0:1, zlim = NULL, xlab = "u1", ylab = "u2",
+  ylim = 0:1, xlab = "u1", ylab = "u2",
   zlab = deparse(substitute(FUN))[1], theta = -45/2, phi = 30,
-  expand = 0.75, col = c("red", "yellow"), shade = 0.2,
+  expand = 0.75, col.pal = "Viridis", border = NA, shade = NA,
   ticktype = "detail", ...)
 }
 \arguments{
@@ -17,35 +17,42 @@ perspective plot.}
 \item{FUN}{character. Decides whether the cdf or pdf of the supplied copula
 is to be plotted. Accepts "cdf" or "pdf" as input.}
 
-\item{n.grid}{integer.}
+\item{n.grid}{integer. Number of grid points in x- and y-direction. Vector of
+length two or one (used for both directions). Determines the number of facets.}
 
-\item{delta}{numeric.}
+\item{delta}{numeric. A value in the range [0, 0.5) for changing the
+evaluation boundaries by adding it to the lower limits of x and y and
+subtracting it from the upper limits of x and y. Defaults to zero.}
 
-\item{xlim}{integer.}
+\item{xlim}{integer. Range of x values to be plotted. Defaults to [0, 1].}
 
-\item{ylim}{integer.}
+\item{ylim}{integer. Range of y values to be plotted. Defaults to [0, 1].}
 
-\item{zlim}{integer.}
+\item{xlab}{character. Title for x-axis.}
 
-\item{xlab}{character.}
+\item{ylab}{character. Title for y-axis.}
 
-\item{ylab}{character.}
+\item{zlab}{character. Title for z-axis.}
 
-\item{zlab}{character.}
+\item{theta}{integer. Azimuthal viewing direction.}
 
-\item{theta}{integer.}
+\item{phi}{integer. Viewing colatitude.}
 
-\item{phi}{integer.}
+\item{expand}{integer. Expansion factor applied to the z coordinates.}
 
-\item{expand}{integer.}
+\item{col.pal}{character. Name of the color palette to be used for the sur-
+face facets, provided by the function hcl.colors() in the grDevices package.}
 
-\item{col}{character, function, or integer.}
+\item{border}{character, function, or integer. Color of the line drawn around
+the surface facets. The default NA shows no borders. NULL corresponds to
+par("fg").}
 
-\item{shade}{integer.}
+\item{shade}{integer. Shade of surface facets.}
 
-\item{ticktype}{character.}
+\item{ticktype}{character. "simple" draws just an arrow, "detailed" draws
+normal ticks as in 2D plots.}
 
-\item{...}{character, function, or integer.}
+\item{...}{character, function, or integer. Additional graphical parameters.}
 }
 \value{
 A perspective plot of a surface over the x-y plane using the values
@@ -57,11 +64,12 @@ specified function.
 }
 \examples{
 \donttest{
-exCop <- clayCop(par = 5, dim = 2)
+exCop <- clayCop(par = 1, dim = 2)
 # Plotting the cdf
 coPersplot(copula = exCop, FUN = "cdf")
 # Plotting the pdf
-coPersplot(copula = exCop, FUN = "pdf")
+coPersplot(copula = exCop, FUN = "pdf", n.grid = 20, col.pal = "Plasma",
+           border = NULL, main = "Clayton Copula PDF", cex.main = 0.8)
 }
 
 }

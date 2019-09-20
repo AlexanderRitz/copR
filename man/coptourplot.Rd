@@ -5,7 +5,8 @@
 \title{Contourplot of Copula}
 \usage{
 coPtourplot(copula, FUN, n.grid = 26, delta = 0, nlevels = 20,
-  xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
+  xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]),
+  col.pal = "Viridis", con.lines = TRUE, ...)
 }
 \arguments{
 \item{copula}{A copula object. Supplies the copula to be used for the
@@ -14,19 +15,29 @@ contourplot.}
 \item{FUN}{character. Decides whether the cdf or pdf of the supplied copula
 is to be plotted. Accepts "cdf" or "pdf" as input.}
 
-\item{n.grid}{integer.}
+\item{n.grid}{integer. Number of grid points in x- and y-direction. Vector of
+length two or one (used for both directions).}
 
-\item{delta}{numeric.}
+\item{delta}{numeric. A value in the range [0, 0.5) for changing the
+evaluation boundaries by adding it to the lower limits of x and y and
+subtracting it from the upper limits of x and y. Defaults to zero.}
 
-\item{nlevels}{integer.}
+\item{nlevels}{integer. Number of contour levels to be plotted.}
 
-\item{xlim}{integer.}
+\item{xlim}{integer. Range of x values to be plotted. Defaults to [0, 1].}
 
-\item{ylim}{integer.}
+\item{ylim}{integer. Range of y values to be plotted. Defaults to [0, 1].}
 
-\item{xlab}{character.}
+\item{xlab}{character. Title for x-axis.}
 
-\item{ylab}{character.}
+\item{ylab}{character. Title for y-axis.}
+
+\item{col.pal}{character. Name of the color palette to be used for the contour
+levels, provided by the function hcl.colors() in the grDevices package.}
+
+\item{con.lines}{logical. Draw contour lines if TRUE (default).}
+
+\item{...}{character, function, or integer. Additional graphical parameters.}
 }
 \value{
 A contourplot with the values given by FUN for a copula of the form
@@ -37,13 +48,13 @@ Gives a contourplot of a given copula object for a specified function.
 }
 \examples{
 \donttest{
-exCop <- clayCop(par = 5, dim = 2)
+exCop <- clayCop(par = 0.5, dim = 2)
 # Plotting the cdf
-coPtourplot(copula = exCop, FUN = "cdf", n.grid = 26, delta = 0, nlevels = 20,
-xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
+coPtourplot(copula = exCop, FUN = "cdf")
 # Plotting the pdf
-coPtourplot(copula = exCop, FUN = "pdf", n.grid = 26, delta = 0, nlevels = 20,
-xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]))
+coPtourplot(copula = exCop, FUN = "pdf", n.grid = 42, nlevels = 16,
+            col.pal = "YlGnBu",
+            plot.title = title(main = "Clayton Copula PDF"))
 }
 
 }
