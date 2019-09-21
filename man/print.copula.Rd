@@ -10,7 +10,7 @@
 \item{x}{an object used to select a method.}
 
 \item{force}{logical. If "TRUE", the cdf and pdf of the copula object will be
-printed despite its length.}
+printed despite their length.}
 
 \item{...}{further arguments passed to or from other methods.}
 }

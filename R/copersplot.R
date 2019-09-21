@@ -37,15 +37,15 @@
 #' \donttest{
 #' excop <- claycop(par = 1, dim = 2)
 #' # Plotting the cdf
-#' coppersplot(copula = excop, FUN = "cdf")
+#' copersplot(copula = excop, FUN = "cdf")
 #' # Plotting the pdf
-#' coppersplot(copula = excop, FUN = "pdf", n.grid = 20, col.pal = "Plasma",
+#' copersplot(copula = excop, FUN = "pdf", n.grid = 20, col.pal = "Plasma",
 #'            border = NULL, main = "Clayton Copula PDF", cex.main = 0.8)
 #' }
 #'
 #' @export
 
-coppersplot <- function (copula,
+copersplot <- function (copula,
                          FUN,
                          n.grid = 26,
                          delta = 0,

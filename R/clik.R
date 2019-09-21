@@ -4,9 +4,8 @@
 #'
 #' @param copula A copula object. Decides the copula family for which the
 #' Likelhood function is to be calculated.
-#' @param marg character. Supplies choices for the marginal distribution
-#' functions.
-#' Can either be estimated through empirical functions or given by name.
+#' @param data The data to base the Likelihood on.
+#' @param parameter Parameter value of the copula.
 #' @return An expression of the calculated Likelihood function.
 #'
 #' @examples
@@ -17,6 +16,13 @@
 #'
 #' @export
 
-clik <- function (copula, marg) {
-  print("Initialisation")
+clik <- function(copula, data, parameter) {
+  d <- copula$dimension
+  n <- nrow(data)
+  theta <- parameter
+  ll <- 0
+  for (i in 1:n) {
+    ll <- ll + log(dcop(copula, eva = TRUE, u = data[i,]))
+    print(ll)
+  }
 }

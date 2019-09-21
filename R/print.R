@@ -2,15 +2,14 @@
 #'
 #' @inheritParams base::print
 #' @param force logical. If "TRUE", the cdf and pdf of the copula object will be
-#' printed despite its length.
+#' printed despite their length.
 #'
 #' @export
 
 
-
 print.copula <- function (x, force = FALSE, ...) {
   if (is.indcop(x) == TRUE) {
-    if (x$dimension < 10) {
+    if (x$dimension < 10 || force == TRUE) {
       cat(
         paste(
           "An ",
@@ -20,6 +19,7 @@ print.copula <- function (x, force = FALSE, ...) {
           " dimensions.",
           sep = ""
         ),
+        "\n",
         "\n",
         paste("cdf = ", as.character(x$distribution$cdf) , sep = ""),
         "\n",
@@ -35,6 +35,7 @@ print.copula <- function (x, force = FALSE, ...) {
           " dimensions.",
           sep = ""
         ),
+        "\n",
         "\n",
         paste("cdf omitted due to length"),
         "\n",
@@ -54,6 +55,7 @@ print.copula <- function (x, force = FALSE, ...) {
         sep = ""
       ),
       "\n",
+      "\n",
       paste("cdf = ", as.character(x$distribution$cdf) , sep = ""),
       "\n",
       paste("pdf = ", as.character(x$distribution$pdf) , sep = "")
@@ -70,6 +72,7 @@ print.copula <- function (x, force = FALSE, ...) {
         ".",
         sep = ""
       ),
+      "\n",
       "\n",
       paste("cdf omitted due to length"),
       "\n",
