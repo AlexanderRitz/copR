@@ -9,23 +9,23 @@
 #' is to be plotted. Accepts "cdf" or "pdf" as input.
 #' @param n.grid integer. Number of grid points in x- and y-direction. Vector of
 #' length two or one (used for both directions). Determines the number of facets.
-#' @param delta numeric. A value in the range [0, 0.5) for changing the
+#' @param delta double. A value in the range [0, 0.5) for changing the
 #' evaluation boundaries by adding it to the lower limits of x and y and
 #' subtracting it from the upper limits of x and y. Defaults to zero.
-#' @param xlim integer. Range of x values to be plotted. Defaults to [0, 1].
-#' @param ylim integer. Range of y values to be plotted. Defaults to [0, 1].
+#' @param xlim double. Range of x values to be plotted. Defaults to [0, 1].
+#' @param ylim double. Range of y values to be plotted. Defaults to [0, 1].
 #' @param xlab character. Title for x-axis.
 #' @param ylab character. Title for y-axis.
 #' @param zlab character. Title for z-axis.
-#' @param theta integer. Azimuthal viewing direction.
-#' @param phi integer. Viewing colatitude.
-#' @param expand integer. Expansion factor applied to the z coordinates.
+#' @param theta double. Azimuthal viewing direction.
+#' @param phi double. Viewing colatitude.
+#' @param expand double. Expansion factor applied to the z coordinates.
 #' @param col.pal character. Name of the color palette to be used for the sur-
 #' face facets, provided by the function hcl.colors() in the grDevices package.
 #' @param border character, function, or integer. Color of the line drawn around
 #' the surface facets. The default NA shows no borders. NULL corresponds to
 #' par("fg").
-#' @param shade integer. Shade of surface facets.
+#' @param shade double. Shade of surface facets.
 #' @param ticktype character. "simple" draws just an arrow, "detailed" draws
 #' normal ticks as in 2D plots.
 #' @param ... character, function, or integer. Additional graphical parameters.
@@ -78,7 +78,8 @@ coppersplot <- function (copula,
         z <- coord$z
         zlim <- range(z, na.rm = TRUE)
         if (identical(min(zlim, na.rm = TRUE), max(zlim, na.rm = TRUE))) {
-          stop("Perspective plots of a horizontal plane are not supported.")
+          warning("All z values are identical.")
+          zlim <- 0:max(z, na.rm = TRUE)
         }
 
         # Calculate colors of facets corresponding to z-values at facet centres
@@ -93,6 +94,7 @@ coppersplot <- function (copula,
         graphics::persp(x = gx,
                         y = gy,
                         z = z,
+                        zlim = zlim,
                         xlab = xlab,
                         ylab = ylab,
                         zlab = zlab,

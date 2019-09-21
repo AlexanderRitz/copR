@@ -6,7 +6,7 @@
 \usage{
 coptourplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
   ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]), nlevels = 20,
-  col.pal = "Viridis", con.lines = TRUE, ...)
+  col.pal = "Viridis", con.lines = TRUE, asp = 1, ...)
 }
 \arguments{
 \item{copula}{A copula object. Supplies the copula to be used for the
@@ -18,13 +18,13 @@ is to be plotted. Accepts "cdf" or "pdf" as input.}
 \item{n.grid}{integer. Number of grid points in x- and y-direction. Vector of
 length two or one (used for both directions).}
 
-\item{delta}{numeric. A value in the range [0, 0.5) for changing the
+\item{delta}{double. A value in the range [0, 0.5) for changing the
 evaluation boundaries by adding it to the lower limits of x and y and
 subtracting it from the upper limits of x and y. Defaults to zero.}
 
-\item{xlim}{integer. Range of x values to be plotted. Defaults to [0, 1].}
+\item{xlim}{double. Range of x values to be plotted. Defaults to [0, 1].}
 
-\item{ylim}{integer. Range of y values to be plotted. Defaults to [0, 1].}
+\item{ylim}{double. Range of y values to be plotted. Defaults to [0, 1].}
 
 \item{xlab}{character. Title for x-axis.}
 
@@ -36,6 +36,9 @@ subtracting it from the upper limits of x and y. Defaults to zero.}
 levels, provided by the function hcl.colors() in the grDevices package.}
 
 \item{con.lines}{logical. Draw contour lines if TRUE (default).}
+
+\item{asp}{double. Aspect ratio of the axes. Defaults to 1. Use NA to fit
+the aspect ratio to the available drawing area.}
 
 \item{...}{character, function, or integer. Additional graphical parameters.}
 }

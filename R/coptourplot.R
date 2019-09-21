@@ -8,17 +8,19 @@
 #' is to be plotted. Accepts "cdf" or "pdf" as input.
 #' @param n.grid integer. Number of grid points in x- and y-direction. Vector of
 #' length two or one (used for both directions).
-#' @param delta numeric. A value in the range [0, 0.5) for changing the
+#' @param delta double. A value in the range [0, 0.5) for changing the
 #' evaluation boundaries by adding it to the lower limits of x and y and
 #' subtracting it from the upper limits of x and y. Defaults to zero.
-#' @param xlim integer. Range of x values to be plotted. Defaults to [0, 1].
-#' @param ylim integer. Range of y values to be plotted. Defaults to [0, 1].
+#' @param xlim double. Range of x values to be plotted. Defaults to [0, 1].
+#' @param ylim double. Range of y values to be plotted. Defaults to [0, 1].
 #' @param xlab character. Title for x-axis.
 #' @param ylab character. Title for y-axis.
 #' @param nlevels integer. Number of contour levels to be plotted.
 #' @param col.pal character. Name of the color palette to be used for the contour
 #' levels, provided by the function hcl.colors() in the grDevices package.
 #' @param con.lines logical. Draw contour lines if TRUE (default).
+#' @param asp double. Aspect ratio of the axes. Defaults to 1. Use NA to fit
+#' the aspect ratio to the available drawing area.
 #' @param ... character, function, or integer. Additional graphical parameters.
 #' @return A contourplot with the values given by FUN for a copula of the form
 #' given by the supplied copula object.
@@ -47,6 +49,7 @@ coptourplot <- function (copula,
                          nlevels = 20,
                          col.pal = "Viridis",
                          con.lines = TRUE,
+                         asp = 1,
                          ...) {
   if (copula$dimension == 2 & n.grid >= 2) {
     if (length(n.grid) == 1) {
@@ -61,6 +64,12 @@ coptourplot <- function (copula,
         gx <- coord$gx
         gy <- coord$gy
         z <- coord$z
+        zlim <- range(z, na.rm = TRUE)
+        if (identical(min(zlim, na.rm = TRUE), max(zlim, na.rm = TRUE))) {
+          warning("All z values are identical.")
+          xlab = "u1"
+          ylab = "u2"
+        }
 
         # Draw the contourplot
         if (con.lines == TRUE) {
@@ -84,20 +93,22 @@ coptourplot <- function (copula,
                                                         add = TRUE);
                                                 graphics::axis(1);
                                                 graphics::axis(2)},
+                                   asp = asp,
                                    ...
           )
         } else {
           graphics::filled.contour(x = gx,
-                                     y = gy,
-                                     z = z,
-                                     nlevels = nlevels,
-                                     color.palette = function(n)
-                                       grDevices::hcl.colors(n, col.pal),
-                                     xlab = xlab,
-                                     ylab = ylab,
-                                     key.title = graphics::title(main = " Contour",
-                                                                 cex.main = 0.8),
-                                     ...
+                                   y = gy,
+                                   z = z,
+                                   nlevels = nlevels,
+                                   color.palette = function(n)
+                                     grDevices::hcl.colors(n, col.pal),
+                                   xlab = xlab,
+                                   ylab = ylab,
+                                   key.title = graphics::title(main = " Contour",
+                                                               cex.main = 0.8),
+                                   asp = asp,
+                                   ...
           )
         }
       } else {

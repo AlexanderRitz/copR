@@ -20,13 +20,13 @@ is to be plotted. Accepts "cdf" or "pdf" as input.}
 \item{n.grid}{integer. Number of grid points in x- and y-direction. Vector of
 length two or one (used for both directions). Determines the number of facets.}
 
-\item{delta}{numeric. A value in the range [0, 0.5) for changing the
+\item{delta}{double. A value in the range [0, 0.5) for changing the
 evaluation boundaries by adding it to the lower limits of x and y and
 subtracting it from the upper limits of x and y. Defaults to zero.}
 
-\item{xlim}{integer. Range of x values to be plotted. Defaults to [0, 1].}
+\item{xlim}{double. Range of x values to be plotted. Defaults to [0, 1].}
 
-\item{ylim}{integer. Range of y values to be plotted. Defaults to [0, 1].}
+\item{ylim}{double. Range of y values to be plotted. Defaults to [0, 1].}
 
 \item{xlab}{character. Title for x-axis.}
 
@@ -34,11 +34,11 @@ subtracting it from the upper limits of x and y. Defaults to zero.}
 
 \item{zlab}{character. Title for z-axis.}
 
-\item{theta}{integer. Azimuthal viewing direction.}
+\item{theta}{double. Azimuthal viewing direction.}
 
-\item{phi}{integer. Viewing colatitude.}
+\item{phi}{double. Viewing colatitude.}
 
-\item{expand}{integer. Expansion factor applied to the z coordinates.}
+\item{expand}{double. Expansion factor applied to the z coordinates.}
 
 \item{col.pal}{character. Name of the color palette to be used for the sur-
 face facets, provided by the function hcl.colors() in the grDevices package.}
@@ -47,7 +47,7 @@ face facets, provided by the function hcl.colors() in the grDevices package.}
 the surface facets. The default NA shows no borders. NULL corresponds to
 par("fg").}
 
-\item{shade}{integer. Shade of surface facets.}
+\item{shade}{double. Shade of surface facets.}
 
 \item{ticktype}{character. "simple" draws just an arrow, "detailed" draws
 normal ticks as in 2D plots.}
