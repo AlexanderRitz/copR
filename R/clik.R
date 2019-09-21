@@ -16,7 +16,7 @@
 #'
 #' @export
 
-cloglik <- function (copula, data, parameter) {
+clik <- function(copula, data, parameter) {
   d <- copula$dimension
   n <- nrow(data)
   theta <- parameter

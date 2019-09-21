@@ -1,4 +1,4 @@
-#' Utility to construct matrix of function values for coptourplot
+#' Utility to construct matrix of function values for plotting functions
 #'
 #' Calculates a matrix containing the function values for a supplied function
 #' and two input variables.
@@ -8,7 +8,6 @@
 #' @param f expression. Gives the function to be evaluated.
 #' @param par numeric.
 #' @return A matrix containing the function values of f for the inputs x and y.
-#'
 
 app <- function (x, y, f, par) {
   v <- matrix(NA, nrow = length(x), ncol = length(y))
@@ -19,7 +18,6 @@ app <- function (x, y, f, par) {
       u2 <- y[j]
       v[i, j] <- eval(f)
     }
-
   }
   return(v)
 }

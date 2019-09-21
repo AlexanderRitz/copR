@@ -2,7 +2,7 @@
 % Please edit documentation in R/app.R
 \name{app}
 \alias{app}
-\title{Utility to construct matrix of function values for coptourplot}
+\title{Utility to construct matrix of function values for plotting functions}
 \usage{
 app(x, y, f, par)
 }
