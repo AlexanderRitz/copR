@@ -4,10 +4,12 @@
 \alias{summary.copula}
 \title{Summary of copula objects}
 \usage{
-\method{summary}{copula}(x, forced = FALSE)
+\method{summary}{copula}(object, ..., force = FALSE)
 }
 \arguments{
-\item{x}{a result of the \emph{default} method of \code{summary()}.}
+\item{object}{an object for which a summary is desired.}
+
+\item{...}{additional arguments affecting the summary produced.}
 
 \item{force}{logical. If "TRUE", the cdf and pdf of the copula object will be
 included despite their length.}

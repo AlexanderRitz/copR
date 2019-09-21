@@ -7,76 +7,76 @@
 #' @export
 
 
-summary.copula <- function(x, forced = FALSE) {
-  if (is.indcop(x) == TRUE) {
-    if (forced == FALSE) {
+summary.copula <- function(object, ..., force = FALSE) {
+  if (is.indcop(object) == TRUE) {
+    if (force == FALSE) {
       cat(paste(
-        x$family,
+        object$family,
         " copula: \n\t",
         "Dimensions: \t\t",
-        x$dimension,
+        object$dimension,
         sep = ""
       ))
     } else {
       cat(
         paste(
-          x$family,
+          object$family,
           " copula: \n\t",
           "Dimensions: \t\t",
-          x$dimension,
+          object$dimension,
           "\n\tcdf: \t",
-          x$distribution$cdf,
+          object$distribution$cdf,
           "\n\tpdf: \t",
-          x$distribution$pdf,
+          object$distribution$pdf,
           sep = ""
         )
       )
     }
-  } else if (forced == FALSE) {
+  } else if (force == FALSE) {
     cat(
       paste(
-        x$family,
+        object$family,
         " copula: \n\t",
         "Dimensions: \t\t",
-        x$dimension,
+        object$dimension,
         "\n\tParameter value: \t",
-        x$parameter,
+        object$parameter,
         "\n\tParameter range: \t",
         "(",
-        x$prange[1],
+        object$prange[1],
         ", ",
-        x$prange[2],
+        object$prange[2],
         ")\n\t",
         "Generator function: \t",
-        x$generator$gen,
+        object$generator$gen,
         "\n\tInverse generator: \t",
-        x$generator$invg,
+        object$generator$invg,
         sep = ""
       )
     )
   } else {
     cat(
       paste(
-        x$family,
+        object$family,
         " copula: \n\t",
         "Dimensions: \t\t",
-        x$dimension,
+        object$dimension,
         "\n\tParameter value: \t",
-        x$parameter,
+        object$parameter,
         "\n\tParameter range: \t",
         "(",
-        x$prange[1],
+        object$prange[1],
         ", ",
-        x$prange[2],
+        object$prange[2],
         ")\n\t",
         "Generator function: \t",
-        x$generator$gen,
+        object$generator$gen,
         "\n\tInverse generator: \t",
-        x$generator$invg,
+        object$generator$invg,
         "\n\tcdf: \t",
-        x$distribution$cdf,
+        object$distribution$cdf,
         "\n\tpdf: \t",
-        x$distribution$pdf,
+        object$distribution$pdf,
         sep = ""
       )
     )

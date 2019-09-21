@@ -7,7 +7,6 @@
 #' @export
 
 
-
 print.copula <- function (x, force = FALSE, ...) {
   if (is.indcop(x) == TRUE) {
     if (x$dimension < 10 || force == TRUE) {
