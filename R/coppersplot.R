@@ -37,15 +37,15 @@
 #' \donttest{
 #' excop <- claycop(par = 1, dim = 2)
 #' # Plotting the cdf
-#' copersplot(copula = excop, FUN = "cdf")
+#' coppersplot(copula = excop, FUN = "cdf")
 #' # Plotting the pdf
-#' copersplot(copula = excop, FUN = "pdf", n.grid = 20, col.pal = "Plasma",
+#' coppersplot(copula = excop, FUN = "pdf", n.grid = 20, col.pal = "Plasma",
 #'            border = NULL, main = "Clayton Copula PDF", cex.main = 0.8)
 #' }
 #'
 #' @export
 
-copersplot <- function (copula,
+coppersplot <- function (copula,
                          FUN,
                          n.grid = 26,
                          delta = 0,
@@ -70,18 +70,14 @@ copersplot <- function (copula,
       if (0 <= delta && delta < (1 / 2)) {
 
         # Create xy-grid and calculate corresponding z-values
-        gx <- seq(xlim[1] + delta, xlim[2] - delta, length.out = n.grid[1])
-        gy <- seq(ylim[1] + delta, ylim[2] - delta, length.out = n.grid[2])
-        theta_ <- copula$parameter
-        if (FUN == "cdf") {
-          z <- app(x = gx, y = gy, f = copula$distribution$cdf, par = theta_)
-        } else if (FUN == "pdf") {
-          z <- app(x = gx,  y = gy, f = copula$distribution$pdf, par = theta_)
-        } else {
-          stop(
-          "Please choose between plotting either the cdf or pdf of the
-               copula."
-            )
+        coord <- zofgrid(cop = copula, FUN = FUN, n = n.grid, delta = delta,
+                         xlim = xlim, ylim = ylim)
+        gx <- coord$gx
+        gy <- coord$gy
+        z <- coord$z
+        zlim <- range(z, na.rm = TRUE)
+        if (identical(min(zlim, na.rm = TRUE), max(zlim, na.rm = TRUE))) {
+          stop("Perspective plots of a horizontal plane are not supported.")
         }
 
         # Calculate colors of facets corresponding to z-values at facet centres

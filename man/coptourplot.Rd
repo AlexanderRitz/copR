@@ -4,8 +4,8 @@
 \alias{coptourplot}
 \title{Contourplot of Copula}
 \usage{
-coptourplot(copula, FUN, n.grid = 26, delta = 0, nlevels = 20,
-  xlim = 0:1, ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]),
+coptourplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
+  ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]), nlevels = 20,
   col.pal = "Viridis", con.lines = TRUE, ...)
 }
 \arguments{
@@ -22,8 +22,6 @@ length two or one (used for both directions).}
 evaluation boundaries by adding it to the lower limits of x and y and
 subtracting it from the upper limits of x and y. Defaults to zero.}
 
-\item{nlevels}{integer. Number of contour levels to be plotted.}
-
 \item{xlim}{integer. Range of x values to be plotted. Defaults to [0, 1].}
 
 \item{ylim}{integer. Range of y values to be plotted. Defaults to [0, 1].}
@@ -31,6 +29,8 @@ subtracting it from the upper limits of x and y. Defaults to zero.}
 \item{xlab}{character. Title for x-axis.}
 
 \item{ylab}{character. Title for y-axis.}
+
+\item{nlevels}{integer. Number of contour levels to be plotted.}
 
 \item{col.pal}{character. Name of the color palette to be used for the contour
 levels, provided by the function hcl.colors() in the grDevices package.}
