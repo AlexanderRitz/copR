@@ -22,7 +22,7 @@ clik <- function(copula, data, parameter) {
   theta <- parameter
   ll <- 0
   for (i in 1:n) {
-    ll <- ll + log(dcop(copula, eva = TRUE, u = data[i,]))
+    ll <- ll + log(dcop(copula, u = data[i,]))
     print(ll)
   }
 }

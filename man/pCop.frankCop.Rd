@@ -4,17 +4,13 @@
 \alias{pcop.frankcop}
 \title{Construction of Frank cdf}
 \usage{
-\method{pcop}{frankcop}(copula, eva = FALSE, u)
+\method{pcop}{frankcop}(copula, u = NULL)
 }
 \arguments{
 \item{copula}{A copula object. Supplies the copula for which the cdf is to be
 defined.}
 
-\item{eva}{Logical. If eva = TRUE, the resulting expression for the cdf will
-be evaluated for the supplied arguments.}
-
-\item{u}{numeric. Optional argument supplying the data to evaluate the cdf,
-only needed in case of eva = TRUE.}
+\item{u}{numeric. Optional argument supplying the data to evaluate the cdf.}
 }
 \description{
 Construction of Frank cdf

@@ -4,29 +4,33 @@
 #'
 #' @export
 
-dcop.indcop <- function (copula, eva, u) {
+dcop.indcop <- function (copula, u = NULL) {
   if (is.null(copula$distribution$pdf)) {
     d <- copula$dimension
     if (is.null(copula$distribution$cdf)) {
-      stop(
-        "Supplied copula object does not contain a cdf expresssion"
-      )
+      stop("Supplied copula object does not contain a cdf expresssion")
     } else {
       pdf <- copula$distribution$cdf
       for (i in 1:d) {
         pdf <- stats::D(pdf, paste("u", i, sep = ""))
       }
-      if (eva == FALSE) {
+      if (is.null(u)) {
         return(pdf)
       } else {
         if (length(u) == d) {
-          if (any(u >= 1) || any(u <= 0)) {
-            return(0)
+          if (!any(is.na(u))) {
+            if (any(u >= 1) || any(u <= 0)) {
+              return(0)
+            }
+            for (i in 1:d) {
+              assign(paste("u", i, sep = ""), u[i])
+            }
+            eval(pdf)
+          } else {
+            stop(
+              "Supplied u contains missing values!"
+              )
           }
-          for (i in 1:d) {
-            assign(paste("u", i, sep = ""), u[i])
-          }
-          eval(pdf)
         } else {
           stop(
             "Supplied data vector not of appropriate length. Has to be of the
@@ -35,18 +39,24 @@ dcop.indcop <- function (copula, eva, u) {
         }
       }
     }
-  } else if (eva == FALSE) {
+  } else if (is.null(u)) {
     return(copula$distribution$pdf)
   } else {
     d <- copula$dimension
     if (length(u) == d) {
-      if (any(u >= 1) || any(u <= 0)) {
-        return(0)
-      } else {
-        for (i in 1:d) {
-          assign(paste("u", i, sep = ""), u[i])
+      if (!any(is.na(u))) {
+        if (any(u >= 1) || any(u <= 0)) {
+          return(0)
+        } else {
+          for (i in 1:d) {
+            assign(paste("u", i, sep = ""), u[i])
+          }
+          eval(copula$distribution$pdf)
         }
-        eval(copula$distribution$pdf)
+      } else {
+        stop(
+          "Supplied u contains missing values"
+          )
       }
     } else {
       stop(
