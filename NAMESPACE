@@ -12,16 +12,8 @@ S3method(rcop,frankcop)
 S3method(rcop,indcop)
 S3method(summary,copula)
 export(claycop)
-<<<<<<< HEAD
-export(clik)
-export(coppersplot)
-||||||| merged common ancestors
 export(clik)
 export(copersplot)
-=======
-export(cloglik)
-export(copersplot)
->>>>>>> upstream/master
 export(coptourplot)
 export(dcop)
 export(frankcop)
