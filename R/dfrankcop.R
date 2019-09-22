@@ -4,9 +4,6 @@
 #'
 #' @export
 
-
-
-
 dcop.frankcop <- function(copula, u = NULL) {
   if (is.null(copula$distribution$pdf)) {
     d <- copula$dimension
