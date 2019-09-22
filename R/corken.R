@@ -21,13 +21,13 @@
 #' iris <- iris[, -5]
 #' corken(iris)
 #'
-#' # with missing values
+#' # with missing values (fast not working)
 #' iris[1,1] <- NA
 #' corken(iris)
 #' corken(iris, use = "complete.obs")
 #' corken(iris, fast = TRUE)
 #'
-#' # fast
+#' # fast (only works without missing values)
 #' corken(swiss, fast = TRUE)
 #' }
 #'

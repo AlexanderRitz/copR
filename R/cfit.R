@@ -26,7 +26,6 @@
 #'
 #' @export
 
-
 cfit <- function (copula, data, interval = NULL) {
   if (is.null(interval)) {
     if (is.claycop(copula)) {
