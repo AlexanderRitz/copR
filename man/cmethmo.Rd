@@ -12,9 +12,9 @@ cmethmo(copula, data = NULL, tau = NULL)
 parameter is to be estimated.}
 
 \item{data}{Matrix or dataframe of appropriate dimension (n x 2).
-The data to base the dependence measure on. OPtional if "tau" is supplied.}
+The data to base the dependence measure on. Optional if "tau" is supplied.}
 
-\item{tau}{numeric. A value to take as Kendall's tau, to base the method of
+\item{tau}{double. A value to take as Kendall's tau, to base the method of
 moments estimator on.}
 }
 \value{
