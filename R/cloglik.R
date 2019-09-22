@@ -7,7 +7,7 @@
 #' @param data The data to base the Likelihood on. Data points have to be normed.
 #' Copula data has to lie within [0, 1]^d.
 #' @param parameter double. Optional argument. Desired Parameter value in case
-#' of desired deviation from supplied copula object.
+#' deviation from supplied copula object is desired.
 #' @return The value of the calculated log-Likelihood function.
 #'
 #' @examples
@@ -22,6 +22,9 @@
 cloglik <- function(copula, data, parameter = NULL) {
   d <- copula$dimension
   n <- nrow(data)
+  if (dim(data)[2] != d) {
+    stop("Dimension of supplied copula and data are not identical!")
+  }
   if (is.null(parameter)) {
     robocop <- copula
   } else {
@@ -30,8 +33,8 @@ cloglik <- function(copula, data, parameter = NULL) {
         "Only a single parameter value should be supplied."
         )
     } else if (parameter < 0) {
-      if (is.frankcop(copula) && copula$dimension == 2) {
-        robocop <- frankcop(par = parameter, dim = copula$dimension)
+      if (is.frankcop(copula) && d == 2) {
+        robocop <- frankcop(par = parameter, dim = d)
       } else {
         stop(
         "Parameter value can only take negative values in case of bivariate
@@ -40,9 +43,9 @@ cloglik <- function(copula, data, parameter = NULL) {
       }
     } else {
       if (is.claycop(copula)) {
-        robocop <- claycop(par = parameter, dim = copula$dimension)
+        robocop <- claycop(par = parameter, dim = d)
       } else if (is.frankcop(copula)) {
-        robocop <- frankcop(par = parameter, dim = copula$dimension)
+        robocop <- frankcop(par = parameter, dim = d)
       } else {
         stop(
           "Please supply a copula object of an appropriate Archimedean family."

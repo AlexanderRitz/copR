@@ -14,7 +14,7 @@ log-Likelihood function is to be calculated.}
 Copula data has to lie within [0, 1]^d.}
 
 \item{parameter}{double. Optional argument. Desired Parameter value in case
-of desired deviation from supplied copula object.}
+deviation from supplied copula object is desired.}
 }
 \value{
 The value of the calculated log-Likelihood function.

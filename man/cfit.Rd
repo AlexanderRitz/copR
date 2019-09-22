@@ -15,7 +15,10 @@ The data to base the Likelihood on. Data points have to be normed, i.e.
 copula data has to lie within [0, 1]^d.}
 
 \item{interval}{double. Optional argument, a vector to supply a lower and
-upper bound of the interval to be searched for the maximum.}
+upper bound of the interval to be searched for the maximum. If not supplied,
+a very extensive interval within the appropriate parameter space will be
+chosen. Plotting the log-Likelihood function to decide upon an interval is
+recommended.}
 }
 \value{
 A list containing a copula object with parameter theta chosen by
