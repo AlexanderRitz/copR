@@ -6,7 +6,7 @@
 #' log-Likelihood function is to be calculated.
 #' @param data The data to base the Likelihood on. Data points have to be normed.
 #' Copula data has to lie within [0, 1]^d.
-#' @param parameter numeric. Optional argument. Desired Parameter value in case
+#' @param parameter double. Optional argument. Desired Parameter value in case
 #' of desired deviation from supplied copula object.
 #' @return The value of the calculated log-Likelihood function.
 #'

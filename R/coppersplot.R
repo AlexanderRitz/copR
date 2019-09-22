@@ -17,7 +17,7 @@
 #' @param xlab character. Title for x-axis.
 #' @param ylab character. Title for y-axis.
 #' @param zlab character. Title for z-axis.
-#' @param main character. Main title for the plot.
+#' @param main character. Main title for the plot. Set to NULL to omit the title.
 #' @param theta double. Azimuthal viewing direction.
 #' @param phi double. Viewing colatitude.
 #' @param expand double. Expansion factor applied to the z coordinates.

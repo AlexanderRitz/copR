@@ -32,7 +32,7 @@ subtracting it from the upper limits of x and y. Defaults to zero.}
 
 \item{ylab}{character. Title for y-axis.}
 
-\item{main}{character. Title for the main plot.}
+\item{main}{character. Title for the main plot. Set to NULL to omit the title.}
 
 \item{nlevels}{integer. Number of contour levels to be plotted.}
 

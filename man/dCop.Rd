@@ -10,7 +10,7 @@ dcop(copula, u)
 \item{copula}{A copula object. Supplies the copula for which the pdf is to be
 constructed.}
 
-\item{u}{numeric. Optional argument supplying the data to evaluate the pdf.}
+\item{u}{double. Optional argument supplying the data to evaluate the pdf.}
 }
 \value{
 expression or numeric for the pdf of the supplied copula object or

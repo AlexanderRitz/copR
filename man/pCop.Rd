@@ -10,7 +10,7 @@ pcop(copula, u)
 \item{copula}{A copula object. Supplies the copula for which the cdf is to be
 defined.}
 
-\item{u}{numeric. Optional argument supplying the data to evaluate the cdf.}
+\item{u}{double. Optional argument supplying the data to evaluate the cdf.}
 }
 \value{
 An expression for the cdf of the supplied copula object or its

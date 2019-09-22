@@ -15,7 +15,7 @@
 #' @param ylim double. Range of y values to be plotted. Defaults to [0, 1].
 #' @param xlab character. Title for x-axis.
 #' @param ylab character. Title for y-axis.
-#' @param main character. Title for the main plot.
+#' @param main character. Title for the main plot. Set to NULL to omit the title.
 #' @param nlevels integer. Number of contour levels to be plotted.
 #' @param col.pal character. Name of the color palette to be used for the contour
 #' levels, provided by the function hcl.colors() in the grDevices package.

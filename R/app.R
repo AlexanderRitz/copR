@@ -3,10 +3,10 @@
 #' Calculates a matrix containing the function values for a supplied function
 #' and two input variables.
 #'
-#' @param x numeric. First input variable.
-#' @param y numeric. Second input variable.
+#' @param x double. First input variable.
+#' @param y double. Second input variable.
 #' @param f expression. Gives the function to be evaluated.
-#' @param par numeric.
+#' @param par double.
 #' @return A matrix containing the function values of f for the inputs x and y.
 
 app <- function (x, y, f, par) {

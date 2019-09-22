@@ -14,7 +14,7 @@ is to be plotted. Accepts "cdf" or "pdf" as input.}
 
 \item{n}{integer. Number of grid points in x- and y-direction.}
 
-\item{delta}{numeric. A value in the range [0, 0.5) for changing the
+\item{delta}{double. A value in the range [0, 0.5) for changing the
 evaluation boundaries by adding it to the lower limits of x and y and
 subtracting it from the upper limits of x and y.}
 

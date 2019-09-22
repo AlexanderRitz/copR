@@ -7,7 +7,7 @@
 #' @param FUN character. Decides whether the cdf or pdf of the supplied copula
 #' is to be plotted. Accepts "cdf" or "pdf" as input.
 #' @param n integer. Number of grid points in x- and y-direction.
-#' @param delta numeric. A value in the range [0, 0.5) for changing the
+#' @param delta double. A value in the range [0, 0.5) for changing the
 #' evaluation boundaries by adding it to the lower limits of x and y and
 #' subtracting it from the upper limits of x and y.
 #' @param xlim integer. Range of x values to be plotted.

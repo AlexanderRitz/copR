@@ -34,7 +34,7 @@ subtracting it from the upper limits of x and y. Defaults to zero.}
 
 \item{zlab}{character. Title for z-axis.}
 
-\item{main}{character. Main title for the plot.}
+\item{main}{character. Main title for the plot. Set to NULL to omit the title.}
 
 \item{theta}{double. Azimuthal viewing direction.}
 

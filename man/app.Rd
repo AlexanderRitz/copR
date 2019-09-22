@@ -7,13 +7,13 @@
 app(x, y, f, par)
 }
 \arguments{
-\item{x}{numeric. First input variable.}
+\item{x}{double. First input variable.}
 
-\item{y}{numeric. Second input variable.}
+\item{y}{double. Second input variable.}
 
 \item{f}{expression. Gives the function to be evaluated.}
 
-\item{par}{numeric.}
+\item{par}{double.}
 }
 \value{
 A matrix containing the function values of f for the inputs x and y.

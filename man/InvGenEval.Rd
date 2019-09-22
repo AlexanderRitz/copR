@@ -7,7 +7,7 @@
 invgeneval(s, copula)
 }
 \arguments{
-\item{s}{numeric. Input for the inverted generator function to be applied.}
+\item{s}{double. Input for the inverted generator function to be applied.}
 
 \item{copula}{A copula object. Decides form of generator function.}
 }
