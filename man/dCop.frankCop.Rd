@@ -4,17 +4,13 @@
 \alias{dcop.frankcop}
 \title{Construction of Frank pdf}
 \usage{
-\method{dcop}{frankcop}(copula, eva, u)
+\method{dcop}{frankcop}(copula, u = NULL)
 }
 \arguments{
 \item{copula}{A copula object. Supplies the copula for which the pdf is to be
 constructed.}
 
-\item{eva}{Logical. If eva = TRUE, the resulting expression will be evaluated
-for the supplied arguments.}
-
-\item{u}{numeric. Optional argument supplying the data to evaluate the pdf,
-only needed in case of eva = TRUE.}
+\item{u}{numeric. Optional argument supplying the data to evaluate the pdf.}
 }
 \description{
 Construction of Frank pdf

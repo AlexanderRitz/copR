@@ -40,9 +40,9 @@ indcop <- function (dim = 2L) {
       distribution = list(cdf = cdf, pdf = pdf)
     )
     class(result) <- c("indcop", "copula")
-    cdf <- pcop(result, eva = FALSE)
+    cdf <- pcop(result)
     result$distribution$cdf <- cdf
-    pdf <- dcop(result, eva = FALSE)
+    pdf <- dcop(result)
     result$distribution$pdf <- pdf
 
     return(result)

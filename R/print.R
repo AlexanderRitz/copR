@@ -37,9 +37,13 @@ print.copula <- function (x, force = FALSE, ...) {
         ),
         "\n",
         "\n",
-        paste("cdf omitted due to length"),
+        paste(
+          "cdf omitted due to length, access with \"yourcopula\"$distribution$cdf"
+          ),
         "\n",
-        paste("pdf omitted due to length")
+        paste(
+          "pdf omitted due to length, access with \"yourcopula\"$distribution$pdf"
+          )
       )
     }
   } else if (force == TRUE) {
@@ -74,9 +78,13 @@ print.copula <- function (x, force = FALSE, ...) {
       ),
       "\n",
       "\n",
-      paste("cdf omitted due to length"),
+      paste(
+        "pdf omitted due to length, access with \"yourcopula\"$distribution$cdf"
+        ),
       "\n",
-      paste("pdf omitted due to length")
+      paste(
+        "pdf omitted due to length, access with \"yourcopula\"$distribution$pdf"
+        )
     )
   }
 }

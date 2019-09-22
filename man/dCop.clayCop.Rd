@@ -4,17 +4,13 @@
 \alias{dcop.claycop}
 \title{Construction of Clayton pdf}
 \usage{
-\method{dcop}{claycop}(copula, eva, u)
+\method{dcop}{claycop}(copula, u = NULL)
 }
 \arguments{
 \item{copula}{A copula object. Supplies the copula for which the pdf is to be
 constructed.}
 
-\item{eva}{Logical. If eva = TRUE, the resulting expression will be evaluated
-for the supplied arguments.}
-
-\item{u}{numeric. Optional argument supplying the data to evaluate the pdf,
-only needed in case of eva = TRUE.}
+\item{u}{numeric. Optional argument supplying the data to evaluate the pdf.}
 }
 \description{
 Construction of Clayton pdf

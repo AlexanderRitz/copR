@@ -4,17 +4,13 @@
 \alias{dcop}
 \title{Density function of a Copula}
 \usage{
-dcop(copula, eva, u)
+dcop(copula, u)
 }
 \arguments{
 \item{copula}{A copula object. Supplies the copula for which the pdf is to be
 constructed.}
 
-\item{eva}{Logical. If eva = TRUE, the resulting expression will be evaluated
-for the supplied arguments.}
-
-\item{u}{numeric. Optional argument supplying the data to evaluate the pdf,
-only needed in case of eva = TRUE.}
+\item{u}{numeric. Optional argument supplying the data to evaluate the pdf.}
 }
 \value{
 expression or numeric for the pdf of the supplied copula object or

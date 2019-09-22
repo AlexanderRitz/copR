@@ -1,10 +1,10 @@
 Package: copR
 Type: Package
-Title: Construction of Archimedean Copulas (copR)
+Title: Archimedean Copulas (copR)
 Authors@R: c(person("Alexander", "Ritz", role = c("aut", "cre"),
                      email = "alex.ritz1992@gmail.com"),
               person("Juliane", "Wilcke", role = "aut"))
-Version: 0.1.0
+Version: 0.8.0
 Author: Alexander Ritz [aut, cre],
   Juliane Wilcke [aut]
 Maintainer: Alexander Ritz <alex.ritz1992@gmail.com>

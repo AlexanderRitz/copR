@@ -4,10 +4,7 @@
 #'
 #' @param copula A copula object. Supplies the copula for which the pdf is to be
 #' constructed.
-#' @param eva Logical. If eva = TRUE, the resulting expression will be evaluated
-#' for the supplied arguments.
-#' @param u numeric. Optional argument supplying the data to evaluate the pdf,
-#' only needed in case of eva = TRUE.
+#' @param u numeric. Optional argument supplying the data to evaluate the pdf.
 #' @return expression or numeric for the pdf of the supplied copula object or
 #' its value at the supplied u.
 #'
@@ -21,6 +18,6 @@
 #'
 #' @export
 
-dcop <- function(copula, eva, u){
+dcop <- function(copula, u){
   UseMethod("dcop")
 }

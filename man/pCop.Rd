@@ -4,17 +4,13 @@
 \alias{pcop}
 \title{Distribution function of a copula}
 \usage{
-pcop(copula, eva, u)
+pcop(copula, u)
 }
 \arguments{
 \item{copula}{A copula object. Supplies the copula for which the cdf is to be
 defined.}
 
-\item{eva}{Logical. If eva = TRUE, the resulting expression for the cdf will
-be evaluated for the supplied arguments.}
-
-\item{u}{numeric. Optional argument supplying the data to evaluate the cdf,
-only needed in case of eva = TRUE.}
+\item{u}{numeric. Optional argument supplying the data to evaluate the cdf.}
 }
 \value{
 An expression for the cdf of the supplied copula object or its
@@ -26,9 +22,9 @@ Constructs the distribution function for a supplied copula object.
 \examples{
 \donttest{
 excop <- Claycop(par = 5, dim = 2)
-excdf <- pcop(excop, eva = FALSE)
+excdf <- pcop(excop)
 #In case evaluation of the cdf is wanted:
-excdfval <- pcop(excop, eva = TRUE, u = c(0.5, 0.5))
+excdfval <- pcop(excop, u = c(0.5, 0.5))
 }
 
 }
