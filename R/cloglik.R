@@ -1,12 +1,14 @@
-#' Computation of loglikelihood of Copulas
+#' Computation of log-Likelihood of Copulas
 #'
-#' Calculates the loglikelihood function of a chosen Copula family
+#' Calculates the log-Likelihood function of a chosen Copula family.
 #'
 #' @param copula A copula object. Decides the copula family for which the
-#' Likelhood function is to be calculated.
-#' @param data The data to base the Likelihood on.
-#' @param parameter Parameter value of the copula.
-#' @return The value of the calculated loglikelihood function.
+#' log-Likelihood function is to be calculated.
+#' @param data The data to base the Likelihood on. Data points have to be normed.
+#' Copula data has to lie within [0, 1]^d.
+#' @param parameter numeric. Optional argument. Desired Parameter value in case
+#' of desired deviation from supplied copula object.
+#' @return The value of the calculated log-Likelihood function.
 #'
 #' @examples
 #' \donttest{

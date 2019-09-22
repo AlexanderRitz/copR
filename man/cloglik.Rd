@@ -2,23 +2,25 @@
 % Please edit documentation in R/cloglik.R
 \name{cloglik}
 \alias{cloglik}
-\title{Computation of loglikelihood of Copulas}
+\title{Computation of log-Likelihood of Copulas}
 \usage{
 cloglik(copula, data, parameter = NULL)
 }
 \arguments{
 \item{copula}{A copula object. Decides the copula family for which the
-Likelhood function is to be calculated.}
+log-Likelihood function is to be calculated.}
 
-\item{data}{The data to base the Likelihood on.}
+\item{data}{The data to base the Likelihood on. Data points have to be normed.
+Copula data has to lie within [0, 1]^d.}
 
-\item{parameter}{Parameter value of the copula.}
+\item{parameter}{numeric. Optional argument. Desired Parameter value in case
+of desired deviation from supplied copula object.}
 }
 \value{
-The value of the calculated loglikelihood function.
+The value of the calculated log-Likelihood function.
 }
 \description{
-Calculates the loglikelihood function of a chosen Copula family
+Calculates the log-Likelihood function of a chosen Copula family.
 }
 \examples{
 \donttest{
