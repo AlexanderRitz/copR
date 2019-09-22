@@ -15,12 +15,13 @@
 #' @param ylim double. Range of y values to be plotted. Defaults to [0, 1].
 #' @param xlab character. Title for x-axis.
 #' @param ylab character. Title for y-axis.
+#' @param main character. Title for the main plot. Set to NULL to omit the title.
 #' @param nlevels integer. Number of contour levels to be plotted.
 #' @param col.pal character. Name of the color palette to be used for the contour
 #' levels, provided by the function hcl.colors() in the grDevices package.
-#' @param con.lines logical. Draw contour lines if TRUE (default).
 #' @param asp double. Aspect ratio of the axes. Defaults to 1. Use NA to fit
 #' the aspect ratio to the available drawing area.
+#' @param con.lines logical. Draw contour lines if TRUE (default).
 #' @param ... character, function, or integer. Additional graphical parameters.
 #' @return A contourplot with the values given by FUN for a copula of the form
 #' given by the supplied copula object.
@@ -46,10 +47,12 @@ coptourplot <- function (copula,
                          ylim = 0:1,
                          xlab = quote(u[1]),
                          ylab = quote(u[2]),
+                         main = paste(FUN, "of", copula$family, "Copula",
+                                      sep = " "),
                          nlevels = 20,
                          col.pal = "Viridis",
-                         con.lines = TRUE,
                          asp = 1,
+                         con.lines = TRUE,
                          ...) {
   if (copula$dimension == 2 & n.grid >= 2) {
     if (length(n.grid) == 1) {
@@ -81,7 +84,8 @@ coptourplot <- function (copula,
                                      grDevices::hcl.colors(n, col.pal),
                                    xlab = xlab,
                                    ylab = ylab,
-                                   key.title = graphics::title(main = " Contour",
+                                   main = main,
+                                   key.title = graphics::title(main = "Levels",
                                                                cex.main = 0.8),
                                    plot.axes = {graphics::contour(x = gx,
                                                         y = gy,
@@ -105,6 +109,7 @@ coptourplot <- function (copula,
                                      grDevices::hcl.colors(n, col.pal),
                                    xlab = xlab,
                                    ylab = ylab,
+                                   main = main,
                                    key.title = graphics::title(main = " Contour",
                                                                cex.main = 0.8),
                                    asp = asp,

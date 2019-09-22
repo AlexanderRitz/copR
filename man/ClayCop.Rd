@@ -7,7 +7,7 @@
 claycop(par = NA, dim = 2L)
 }
 \arguments{
-\item{par}{numeric. Supplies value of parameter of the copula to be
+\item{par}{double. Supplies value of parameter of the copula to be
 constructed.}
 
 \item{dim}{integer. Supplies the number of dimensions of the copula to be

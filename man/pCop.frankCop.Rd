@@ -10,7 +10,7 @@
 \item{copula}{A copula object. Supplies the copula for which the cdf is to be
 defined.}
 
-\item{u}{numeric. Optional argument supplying the data to evaluate the cdf.}
+\item{u}{double. Optional argument supplying the data to evaluate the cdf.}
 }
 \description{
 Construction of Frank cdf

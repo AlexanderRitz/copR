@@ -4,7 +4,7 @@
 #' copula object.
 #'
 #' @param copula A copula object. Decides form of generator function.
-#' @param s numeric. Input for the inverted generator function to be applied.
+#' @param s double. Input for the inverted generator function to be applied.
 #' @return The value of the inverse generator function of the given copula
 #' object at input x.
 #'

@@ -6,7 +6,7 @@
 #' positive values. If the supplied parameter is too close to zero, you will be
 #' informed that the use of an Independence copula is recommended in this case.
 #'
-#' @param par numeric. Supplies value of parameter of the copula to be
+#' @param par double. Supplies value of parameter of the copula to be
 #' constructed.
 #' @param dim integer. Supplies the number of dimensions of the copula to be
 #' constructed.
@@ -51,7 +51,7 @@ claycop <- function (par = NA,
       )
   } else if (abs(par) <= (.Machine$double.eps ^ (1 / 2))) {
     stop(
-      "Parameter is close enough to zero to change to the Independence copula"
+      "Parameter is close enough to zero to change to the Independence copula."
       )
   } else if (dim < 2) {
     stop(

@@ -17,6 +17,7 @@
 #' @param xlab character. Title for x-axis.
 #' @param ylab character. Title for y-axis.
 #' @param zlab character. Title for z-axis.
+#' @param main character. Main title for the plot. Set to NULL to omit the title.
 #' @param theta double. Azimuthal viewing direction.
 #' @param phi double. Viewing colatitude.
 #' @param expand double. Expansion factor applied to the z coordinates.
@@ -54,7 +55,9 @@ coppersplot <- function (copula,
                          ylim = 0:1,
                          xlab = "u1",
                          ylab = "u2",
-                         zlab = deparse(substitute(FUN))[1],
+                         zlab = FUN,
+                         main = paste(FUN, "of", copula$family, "Copula",
+                                      sep = " "),
                          theta = -45/2,
                          phi = 30,
                          expand = 0.75,
@@ -98,6 +101,7 @@ coppersplot <- function (copula,
                         xlab = xlab,
                         ylab = ylab,
                         zlab = zlab,
+                        main = main,
                         theta = theta,
                         phi = phi,
                         expand = expand,

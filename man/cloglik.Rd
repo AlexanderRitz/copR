@@ -13,7 +13,7 @@ log-Likelihood function is to be calculated.}
 \item{data}{The data to base the Likelihood on. Data points have to be normed.
 Copula data has to lie within [0, 1]^d.}
 
-\item{parameter}{numeric. Optional argument. Desired Parameter value in case
+\item{parameter}{double. Optional argument. Desired Parameter value in case
 of desired deviation from supplied copula object.}
 }
 \value{

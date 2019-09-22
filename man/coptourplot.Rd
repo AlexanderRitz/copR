@@ -5,8 +5,10 @@
 \title{Contourplot of Copula}
 \usage{
 coptourplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
-  ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]), nlevels = 20,
-  col.pal = "Viridis", con.lines = TRUE, asp = 1, ...)
+  ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]),
+  main = paste(FUN, "of", copula$family, "Copula", sep = " "),
+  nlevels = 20, col.pal = "Viridis", asp = 1, con.lines = TRUE,
+  ...)
 }
 \arguments{
 \item{copula}{A copula object. Supplies the copula to be used for the
@@ -30,15 +32,17 @@ subtracting it from the upper limits of x and y. Defaults to zero.}
 
 \item{ylab}{character. Title for y-axis.}
 
+\item{main}{character. Title for the main plot. Set to NULL to omit the title.}
+
 \item{nlevels}{integer. Number of contour levels to be plotted.}
 
 \item{col.pal}{character. Name of the color palette to be used for the contour
 levels, provided by the function hcl.colors() in the grDevices package.}
 
-\item{con.lines}{logical. Draw contour lines if TRUE (default).}
-
 \item{asp}{double. Aspect ratio of the axes. Defaults to 1. Use NA to fit
 the aspect ratio to the available drawing area.}
+
+\item{con.lines}{logical. Draw contour lines if TRUE (default).}
 
 \item{...}{character, function, or integer. Additional graphical parameters.}
 }

@@ -4,7 +4,7 @@
 #'
 #' @param copula A copula object. Supplies the copula for which the pdf is to be
 #' constructed.
-#' @param u numeric. Optional argument supplying the data to evaluate the pdf.
+#' @param u double. Optional argument supplying the data to evaluate the pdf.
 #' @return expression or numeric for the pdf of the supplied copula object or
 #' its value at the supplied u.
 #'

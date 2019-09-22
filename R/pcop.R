@@ -4,7 +4,7 @@
 #'
 #' @param copula A copula object. Supplies the copula for which the cdf is to be
 #' defined.
-#' @param u numeric. Optional argument supplying the data to evaluate the cdf.
+#' @param u double. Optional argument supplying the data to evaluate the cdf.
 #' @return An expression for the cdf of the supplied copula object or its
 #' numeric value at the supplied u in case evaluation was chosen..
 #'

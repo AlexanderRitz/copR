@@ -10,10 +10,10 @@ cfit(copula, data, interval = NULL)
 \item{copula}{A copula object. Decides the copula family for which the
 log-Likelihood function is to be maximised.}
 
-\item{data}{numeric. The data to base the Likelihood on. Data points have to
+\item{data}{double. The data to base the Likelihood on. Data points have to
 be normed, i.e. copula data has to lie within [0, 1]^d.}
 
-\item{interval}{numeric. Optional argument, a vector to supply a lower and
+\item{interval}{double. Optional argument, a vector to supply a lower and
 upper bound of the interval to be searched for the maximum.}
 }
 \value{
