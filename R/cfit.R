@@ -14,8 +14,8 @@
 #' chosen. Plotting the log-Likelihood function to decide upon an interval is
 #' recommended.
 #' @return A list containing a copula object with parameter theta chosen by
-#' maximum Likelihood estimation and the value of the log-Likelihood function at
-#' the found optimum.
+#' maximum Likelihood estimation and the result of the optimisation of the
+#' log-Likelihood function.
 #'
 #' @examples
 #' \donttest{
@@ -47,8 +47,8 @@ cfit <- function (copula, data, interval = NULL) {
     }
   } else if (length(interval) == 2) {
     if (interval[1] < interval[2]) {
-    lowb <- interval[1]
-    upb <- interval[2]
+      lowb <- interval[1]
+      upb <- interval[2]
     } else if (interval[2] < interval[1]) {
       lowb <- interval[2]
       upb <- interval[1]
@@ -56,14 +56,23 @@ cfit <- function (copula, data, interval = NULL) {
       stop("Please supply two distinct numeric interval bounds.")
     }
   } else {
-    stop("Interval not of appropriate length. Should contain a lower and upper
-      bound for the parameter space to be searched.")
+    stop(
+      "Interval not of appropriate length. Should contain a lower and upper
+      bound for the parameter space to be searched."
+    )
   }
-  stats::optimise(
+  result <- stats::optimise(
     f = cloglik,
     interval = c(lowb, upb),
     maximum = TRUE,
     copula = copula,
     data = data
   )
+  if (copula$family == "Clayton") {
+    optmodel <- claycop(par = as.numeric(result[1]), dim = copula$dimension)
+  } else if (copula$family == "Frank") {
+    optmodel <- frankcop(par = as.numeric(result[1]), dim = copula$dimension)
+  }
+  opmosum <- list(omodel, result)
+  return(opmosum)
 }

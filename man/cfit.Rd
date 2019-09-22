@@ -22,8 +22,8 @@ recommended.}
 }
 \value{
 A list containing a copula object with parameter theta chosen by
-maximum Likelihood estimation and the value of the log-Likelihood function at
-the found optimum.
+maximum Likelihood estimation and the result of the optimisation of the
+log-Likelihood function.
 }
 \description{
 Calculates the maximum of the log-Likelihood function of a chosen Copula
