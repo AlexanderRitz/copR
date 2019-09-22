@@ -20,9 +20,23 @@ zofgrid <- function(cop, FUN, n, delta, xlim, ylim) {
   gy <- seq(ylim[1] + delta, ylim[2] - delta, length.out = n[2])
   theta <- cop$parameter
   if (FUN == "cdf") {
-    z <- app(x = gx, y = gy, f = cop$distribution$cdf, par = theta)
+    z <- matrix(NA, nrow = length(gx), ncol = length(gy))
+    for (i in 1:length(gx)) {
+      for (j in 1:length(gy)) {
+        u1 <- gx[i]
+        u2 <- gy[j]
+        z[i, j] <- pcop(copula = cop, u = c(u1, u2))
+      }
+    }
   } else if (FUN == "pdf") {
-    z <- app(x = gx,  y = gy, f = cop$distribution$pdf, par = theta)
+    z <- matrix(NA, nrow = length(gx), ncol = length(gy))
+    for (i in 1:length(gx)) {
+      for (j in 1:length(gy)) {
+        u1 <- gx[i]
+        u2 <- gy[j]
+        z[i, j] <- dcop(copula = cop, u = c(u1, u2))
+      }
+    }
   } else {
     stop(
       "Please choose between plotting either the cdf or pdf of the copula."
