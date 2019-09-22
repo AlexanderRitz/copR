@@ -7,8 +7,8 @@
 #' @param copula A copula object. Decides the copula family for which the
 #' parameter is to be estimated.
 #' @param data Matrix or dataframe of appropriate dimension (n x 2).
-#' The data to base the dependence measure on. OPtional if "tau" is supplied.
-#' @param tau numeric. A value to take as Kendall's tau, to base the method of
+#' The data to base the dependence measure on. Optional if "tau" is supplied.
+#' @param tau double. A value to take as Kendall's tau, to base the method of
 #' moments estimator on.
 #' @return A copula object with parameter theta chosen by inversion of Kendall's
 #' tau.
@@ -32,9 +32,9 @@ cmethmo <- function (copula, data = NULL, tau = NULL) {
       } else if (is.frankcop(copula)) {
         stop("No closed form solution exists, implementation outstanding.")
       } else if (is.indcop(copula)) {
-        stop("No parameter to be chosen in cas of independence!")
+        stop("No parameter to be chosen in case of independence!")
       } else {
-        stop("Supplied copula object is not supported currrently")
+        stop("Supplied copula object is not supported currrently.")
       }
       newcop <- claycop(par = theta, dim = 2)
       return(newcop)
@@ -48,9 +48,9 @@ cmethmo <- function (copula, data = NULL, tau = NULL) {
       } else if (is.frankcop(copula)) {
         stop("No closed form solution exists, implementation outstanding.")
       } else if (is.indcop(copula)) {
-        stop("No parameter to be chosen in cas of independence!")
+        stop("No parameter to be chosen in case of independence!")
       } else {
-        stop("Supplied copula object is not supported currrently")
+        stop("Supplied copula object is not supported currrently.")
       }
       newcop <- claycop(par = theta, dim = 2)
       return(newcop)

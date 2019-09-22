@@ -23,7 +23,6 @@
 #'
 #' @export
 
-
 cfit <- function (copula, data, interval = NULL) {
   lowb <-
   upb <-
