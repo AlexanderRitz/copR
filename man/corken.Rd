@@ -7,7 +7,8 @@
 corken(data, use = "everything", fast = FALSE)
 }
 \arguments{
-\item{data}{double. Supplies the data as a matrix or data frame.}
+\item{data}{Matrix or dataframe of appropriate dimension (n x d).
+Supplies the data as a matrix or data frame.}
 
 \item{use}{character. String (may be abbreviated) indicating the treatment of
 missing values: "everything", "all.obs", "complete.obs", "na.or.complete", or

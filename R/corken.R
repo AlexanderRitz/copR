@@ -3,7 +3,8 @@
 #' Wrapper function for computing all pairwise Kendall rank correlation
 #' coefficients between the columns of a given data matrix.
 #'
-#' @param data double. Supplies the data as a matrix or data frame.
+#' @param data Matrix or dataframe of appropriate dimension (n x d).
+#' Supplies the data as a matrix or data frame.
 #' @param use character. String (may be abbreviated) indicating the treatment of
 #' missing values: "everything", "all.obs", "complete.obs", "na.or.complete", or
 #' "pairwise.complete.obs" (see \code{cor} for an explanation of the options).
@@ -38,10 +39,10 @@ corken <- function (data,
   if (!is.matrix(data) && !is.data.frame(data)) {
     stop("The data needs to be supplied in a matrix or data frame.")
   }
-  if (!is.numeric(data)) {
+  if (!is.numeric(as.matrix(data))) {
     stop("The supplied data must be numeric.")
   }
-  if (isTRUE(fast)) {
+  if (fast == TRUE) {
     if (anyNA(data)) {
       stop("The fast computation function cor.fk() from the pcaPP package does
            not work if any values in the data are missing.")
