@@ -16,8 +16,9 @@
 #' @examples
 #' \donttest{
 #' exc <- claycop(par = 5, dim = 2)
-#' U <- matrix(c(0.7026, 0.6359, 0.4116, 0.8833), nrow = 2, byrow = TRUE)
-#' ll <- cloglik(copula = exc, data = U)
+#' U <- matrix(c(0.7026, 0.6359, 0.4116, 0.8833, 3.2175, 4.0357), nrow = 3,
+#' byrow = TRUE)
+#' mmc <- cmethmo(copula = exc, data = U)
 #' }
 #'
 #' @export
