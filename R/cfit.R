@@ -73,6 +73,6 @@ cfit <- function (copula, data, interval = NULL) {
   } else if (copula$family == "Frank") {
     optmodel <- frankcop(par = as.numeric(result[1]), dim = copula$dimension)
   }
-  opmosum <- list(omodel, result)
+  opmosum <- list(optmodel, result)
   return(opmosum)
 }
