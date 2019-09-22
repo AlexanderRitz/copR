@@ -1,6 +1,6 @@
-#' Likelihood of Copula
+#' Computation of loglikelihood of Copulas
 #'
-#' Calculates the Likelihood function of a chosen Copula family
+#' Calculates the loglikelihood function of a chosen Copula family
 #'
 #' @param copula A copula object. Decides the copula family for which the
 #' Likelhood function is to be calculated.
