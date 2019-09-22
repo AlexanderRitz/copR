@@ -5,10 +5,10 @@
 \title{Perspective Plot of Copula}
 \usage{
 coppersplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
-  ylim = 0:1, xlab = "u1", ylab = "u2",
-  zlab = deparse(substitute(FUN))[1], theta = -45/2, phi = 30,
-  expand = 0.75, col.pal = "Viridis", border = NA, shade = NA,
-  ticktype = "detail", ...)
+  ylim = 0:1, xlab = "u1", ylab = "u2", zlab = FUN,
+  main = paste(FUN, "of", copula$family, "Copula", sep = " "),
+  theta = -45/2, phi = 30, expand = 0.75, col.pal = "Viridis",
+  border = NA, shade = NA, ticktype = "detail", ...)
 }
 \arguments{
 \item{copula}{A copula object. Supplies the copula to be used for the
@@ -33,6 +33,8 @@ subtracting it from the upper limits of x and y. Defaults to zero.}
 \item{ylab}{character. Title for y-axis.}
 
 \item{zlab}{character. Title for z-axis.}
+
+\item{main}{character. Main title for the plot.}
 
 \item{theta}{double. Azimuthal viewing direction.}
 

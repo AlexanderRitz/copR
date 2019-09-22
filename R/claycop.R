@@ -51,7 +51,7 @@ claycop <- function (par = NA,
       )
   } else if (abs(par) <= (.Machine$double.eps ^ (1 / 2))) {
     stop(
-      "Parameter is close enough to zero to change to the Independence copula"
+      "Parameter is close enough to zero to change to the Independence copula."
       )
   } else if (dim < 2) {
     stop(

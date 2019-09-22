@@ -38,6 +38,9 @@ corken <- function (data,
   if (!is.matrix(data) && !is.data.frame(data)) {
     stop("The data needs to be supplied in a matrix or data frame.")
   }
+  if (!is.numeric(data)) {
+    stop("The supplied data must be numeric.")
+  }
   if (isTRUE(fast)) {
     if (anyNA(data)) {
       stop("The fast computation function cor.fk() from the pcaPP package does
