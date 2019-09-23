@@ -2,7 +2,7 @@
 % Please edit documentation in R/zofgrid.R
 \name{zofgrid}
 \alias{zofgrid}
-\title{Utility to construct xyz-coordinates of a function for plotting functions}
+\title{Utility to construct xyz-coordinates of a function for the plotting functions}
 \usage{
 zofgrid(cop, FUN, n, delta, xlim, ylim)
 }
@@ -27,6 +27,6 @@ A list with a vector  of x-coordinates, a vector of y-coordinates and
 a matrix with the function values of FUN on the xy-grid.
 }
 \description{
-Sets up an xy-grid, has the supplied function evaluated on the grid, and
+Sets up an xy-grid, retrieves the function value at each grid point, and
 returns the resulting xyz-coordinates.
 }

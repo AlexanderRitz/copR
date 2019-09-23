@@ -1,6 +1,6 @@
-#' Utility to construct xyz-coordinates of a function for plotting functions
+#' Utility to construct xyz-coordinates of a function for the plotting functions
 #'
-#' Sets up an xy-grid, has the supplied function evaluated on the grid, and
+#' Sets up an xy-grid, retrieves the function value at each grid point, and
 #' returns the resulting xyz-coordinates.
 #'
 #' @param cop A copula object.
@@ -18,9 +18,9 @@
 zofgrid <- function(cop, FUN, n, delta, xlim, ylim) {
   gx <- seq(xlim[1] + delta, xlim[2] - delta, length.out = n[1])
   gy <- seq(ylim[1] + delta, ylim[2] - delta, length.out = n[2])
+  z <- matrix(NA, nrow = length(gx), ncol = length(gy))
   theta <- cop$parameter
   if (FUN == "cdf") {
-    z <- matrix(NA, nrow = length(gx), ncol = length(gy))
     for (i in 1:length(gx)) {
       for (j in 1:length(gy)) {
         u1 <- gx[i]
@@ -29,7 +29,6 @@ zofgrid <- function(cop, FUN, n, delta, xlim, ylim) {
       }
     }
   } else if (FUN == "pdf") {
-    z <- matrix(NA, nrow = length(gx), ncol = length(gy))
     for (i in 1:length(gx)) {
       for (j in 1:length(gy)) {
         u1 <- gx[i]

@@ -41,7 +41,7 @@
 
 coptourplot <- function (copula,
                          FUN,
-                         n.grid = 26,
+                         n.grid = 50,
                          delta = 0,
                          xlim = 0:1,
                          ylim = 0:1,
