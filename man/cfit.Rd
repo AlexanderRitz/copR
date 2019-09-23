@@ -38,6 +38,15 @@ exc <- claycop(par = 5, dim = 2)
 U <- matrix(c(0.7026, 0.6359, 0.4116, 0.8833, 0.3127, 0.4035), nrow = 3,
 byrow = TRUE)
 fit <- cfit(copula = exc, data = U)
+
+# Choice of an interval could be based on a visual inspection of the
+#log-likelihood function:
+xpar <- seq(from = 0.1, to = 10, length.out = 100)
+ll <- rep(NA, times = 100)
+for (i in 1:100) {
+  ll[i] <- cloglik(exc, data = U, parameter = xpar[i])
+  }
+plot(x = xpar, y = ll, xlab = "Parameter value", ylab = "log-likelihood")
 }
 
 }

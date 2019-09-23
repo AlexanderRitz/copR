@@ -4,7 +4,7 @@
 \alias{coptourplot}
 \title{Contourplot of Copula}
 \usage{
-coptourplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
+coptourplot(copula, FUN, n.grid = 50, delta = 0, xlim = 0:1,
   ylim = 0:1, xlab = quote(u[1]), ylab = quote(u[2]),
   main = paste(FUN, "of", copula$family, "Copula", sep = " "),
   nlevels = 20, col.pal = "Viridis", asp = 1, con.lines = TRUE,

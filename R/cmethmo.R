@@ -30,14 +30,20 @@ cmethmo <- function (copula, data = NULL, tau = NULL) {
       tau <- corken(data = data)[1, 2]
       if (is.claycop(copula)) {
         theta <- (-2 * tau / (tau - 1))
+        newcop <- claycop(par = theta, dim = 2)
       } else if (is.frankcop(copula)) {
-        stop("No closed form solution exists, implementation outstanding.")
+        if (tau == 0) {
+          theta <- 0
+          newcop <- frankcop(par = theta, dim = 2)
+        } else {
+          theta <- franktau(tau)
+          newcop <- frankcop(par = theta, dim = 2)
+        }
       } else if (is.indcop(copula)) {
         stop("No parameter to be chosen in case of independence!")
       } else {
         stop("Supplied copula object is not supported currrently.")
       }
-      newcop <- claycop(par = theta, dim = 2)
       return(newcop)
     } else {
       stop("Data of dimension (n x 2) has to be supplied!")
@@ -46,14 +52,20 @@ cmethmo <- function (copula, data = NULL, tau = NULL) {
     if (tau <= 1 && tau >= -1) {
       if (is.claycop(copula)) {
         theta <- (-2 * tau / (tau - 1))
+        newcop <- claycop(par = theta, dim = 2)
       } else if (is.frankcop(copula)) {
-        stop("No closed form solution exists, implementation outstanding.")
+        if (tau == 0) {
+          theta <- 0
+          newcop <- frankcop(par = theta, dim = 2)
+        } else {
+          theta <- franktau(tau)
+          newcop <- frankcop(par = theta, dim = 2)
+        }
       } else if (is.indcop(copula)) {
         stop("No parameter to be chosen in case of independence!")
       } else {
         stop("Supplied copula object is not supported currrently.")
       }
-      newcop <- claycop(par = theta, dim = 2)
       return(newcop)
     } else {
       stop("Tau has to take a value in [-1, 1].")

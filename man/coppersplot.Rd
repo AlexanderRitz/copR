@@ -4,7 +4,7 @@
 \alias{coppersplot}
 \title{Perspective Plot of Copula}
 \usage{
-coppersplot(copula, FUN, n.grid = 26, delta = 0, xlim = 0:1,
+coppersplot(copula, FUN, n.grid = 50, delta = 0, xlim = 0:1,
   ylim = 0:1, xlab = "u1", ylab = "u2", zlab = FUN,
   main = paste(FUN, "of", copula$family, "Copula", sep = " "),
   theta = -45/2, phi = 30, expand = 0.75, col.pal = "Viridis",
