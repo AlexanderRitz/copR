@@ -21,9 +21,12 @@ chosen. Plotting the log-Likelihood function to decide upon an interval is
 recommended.}
 }
 \value{
-A list containing a copula object with parameter theta chosen by
-maximum Likelihood estimation and the result of the optimisation of the
-log-Likelihood function.
+A list of class "fitcop" inheriting the class of the supplied copula
+object, with identical elements to the original object, aside from the
+maximum likelihood estimate replacing the original parameter value. With one
+additional element
+\item{loglikelihood}{The maximum value of the log-likelihood of the supplied
+copula.}
 }
 \description{
 Calculates the maximum of the log-Likelihood function of a chosen Copula
@@ -32,8 +35,9 @@ family by utilizing stats::optimise.
 \examples{
 \donttest{
 exc <- claycop(par = 5, dim = 2)
-U <- matrix(c(0.7026, 0.6359, 0.4116, 0.8833), nrow = 2, byrow = TRUE)
-ll <- cloglik(copula = exc, data = U)
+U <- matrix(c(0.7026, 0.6359, 0.4116, 0.8833, 0.3127, 0.4035), nrow = 3,
+byrow = TRUE)
+fit <- cfit(copula = exc, data = U)
 }
 
 }
