@@ -103,6 +103,8 @@ summary.fitcop <- function(object, ..., force = FALSE) {
         object$dimension,
         "\n\tMax. likelihood est.: \t",
         object$parameter,
+        "\n\tUsed observations: \t",
+        object$observations,
         "\n\tParameter range: \t",
         "(",
         object$prange[1],
@@ -122,11 +124,13 @@ summary.fitcop <- function(object, ..., force = FALSE) {
     cat(
       paste(
         object$family,
-        " copula: \n\t\t",
+        " copula: \n\t",
         "Dimensions: \t\t",
         object$dimension,
         "\n\tMax. likelihood est.: \t",
         object$parameter,
+        "\n\tUsed observations: \t",
+        object$observations,
         "\n\tParameter range: \t",
         "(",
         object$prange[1],

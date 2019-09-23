@@ -105,7 +105,9 @@ print.fitcop <- function (x, ...) {
       x$family,
       " copula has been fitted with theta = ",
       x$parameter,
-      ".",
+      ", based on ",
+      x$observations,
+      " observations.",
       sep = ""
     ),
     paste(

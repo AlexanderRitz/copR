@@ -35,9 +35,20 @@ is.indcop <- function (copula) {
 #'
 #' @param copula A copula object.
 #' @return TRUE or FALSE depending on whether the supplied object is of
-#' the class copula.
+#' the class "copula".
 #'
 
 is.copula <- function (copula) {
   inherits(copula, "copula")
+}
+
+#' Utility to check inheritance of objects for "fitcop"
+#'
+#' @param copula A copula object.
+#' @return TRUE or FALSE depending on whether the supplied object is of
+#' the class "fitcop".
+#'
+
+is.fitcop <- function (copula) {
+  inherits(copula, "fitcop")
 }

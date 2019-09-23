@@ -23,10 +23,11 @@ recommended.}
 \value{
 A list of class "fitcop" inheriting the class of the supplied copula
 object, with identical elements to the original object, aside from the
-maximum likelihood estimate replacing the original parameter value. With one
-additional element
+maximum likelihood estimate replacing the original parameter value. With two
+additional elements
 \item{loglikelihood}{The maximum value of the log-likelihood of the supplied
 copula.}
+\item{observations}{The number of observations the estimation was based on.}
 }
 \description{
 Calculates the maximum of the log-Likelihood function of a chosen Copula
