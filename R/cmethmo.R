@@ -2,8 +2,7 @@
 #' using Kendall's tau
 #'
 #' Calculates a method of moments estimate of the parameter of a chosen
-#' bivariate Copula. Only implemented for Clayton family due to availability of
-#' a closed from solution.
+#' bivariate Copula.
 #'
 #' @param copula A copula object. Decides the copula family for which the
 #' parameter is to be estimated.

@@ -23,8 +23,7 @@ tau.
 }
 \description{
 Calculates a method of moments estimate of the parameter of a chosen
-bivariate Copula. Only implemented for Clayton family due to availability of
-a closed from solution.
+bivariate Copula.
 }
 \examples{
 \donttest{
