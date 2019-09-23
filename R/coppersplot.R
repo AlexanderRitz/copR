@@ -30,9 +30,13 @@
 #' @param ticktype character. "simple" draws just an arrow, "detailed" draws
 #' normal ticks as in 2D plots.
 #' @param ... character, function, or integer. Additional graphical parameters.
-#'
 #' @return A perspective plot of a surface over the x-y plane using the values
 #' given by FUN for a copula of the form given by the supplied copula object.
+#'
+#' @references Hofert et al. (2018). Elements of Copula Modeling with R.
+#' Springer.
+#' @references Davies (2016). The Book of R: A first course in programming and
+#' statistics. no starch press.
 #'
 #' @examples
 #' \donttest{
@@ -46,6 +50,7 @@
 #' }
 #'
 #' @export
+#' @seealso \code{\link{coptourplot}}
 
 coppersplot <- function (copula,
                          FUN,

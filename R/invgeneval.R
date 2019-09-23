@@ -8,6 +8,12 @@
 #' @return The value of the inverse generator function of the given copula
 #' object at input x.
 #'
+#' @references Hofert et al. (2018). Elements of Copula Modeling with R.
+#' Springer.
+#' @references
+#' Frees and Valdez (1998). Understanding Relationships Using Copulas. North
+#' American Actuarial Journal 2(1):1-25. January 1998
+#'
 
 invgeneval <- function (s, copula) {
   if (length(copula$parameter == 1L)) {

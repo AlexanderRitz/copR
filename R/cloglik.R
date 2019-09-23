@@ -10,6 +10,12 @@
 #' deviation from supplied copula object is desired.
 #' @return The value of the calculated log-Likelihood function.
 #'
+#' @references Hofert et al. (2018). Elements of Copula Modeling with R.
+#' Springer.
+#' @references
+#' Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+#' Second Edition.
+#'
 #' @examples
 #' \donttest{
 #' exc <- claycop(par = 5, dim = 2)
@@ -18,6 +24,7 @@
 #' }
 #'
 #' @export
+#' @seealso \code{\link{cfit}}
 
 cloglik <- function(copula, data, parameter = NULL) {
   d <- copula$dimension

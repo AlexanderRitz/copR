@@ -9,6 +9,9 @@
 #' @param tau double. A numeric value for Kendall's tau.
 #' @return A value for the parameter theta based on method of moments estimation
 #' by the supplied Kendalls'tau.
+#'
+#' @references Frees and Valdez (1998). Understanding Relationships Using
+#' Copulas. North American Actuarial Journal 2(1):1-25.
 
 
 franktau <- function(tau) {

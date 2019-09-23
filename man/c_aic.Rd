@@ -27,3 +27,6 @@ c_aic(fit)
 }
 
 }
+\seealso{
+\code{\link{cloglik}} and \code{\link{c_bic}}
+}

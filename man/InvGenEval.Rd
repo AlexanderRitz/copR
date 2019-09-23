@@ -19,3 +19,10 @@ object at input x.
 Applies appropriate inverted generator function to input, based on supplied
 copula object.
 }
+\references{
+Hofert et al. (2018). Elements of Copula Modeling with R.
+Springer.
+
+Frees and Valdez (1998). Understanding Relationships Using Copulas. North
+American Actuarial Journal 2(1):1-25. January 1998
+}

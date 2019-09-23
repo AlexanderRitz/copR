@@ -30,3 +30,13 @@ ll <- cloglik(copula = exc, data = U)
 }
 
 }
+\references{
+Hofert et al. (2018). Elements of Copula Modeling with R.
+Springer.
+
+Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+Second Edition.
+}
+\seealso{
+\code{\link{cfit}}
+}

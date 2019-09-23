@@ -12,6 +12,15 @@
 #' The expressions can be evaluated for the variables "ui" in the case of cdf
 #' and pdf.
 #'
+#' @references Hofert et al. (2018). Elements of Copula Modeling with R.
+#' Springer.
+#' @references
+#' Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+#' Second Edition.
+#' @references
+#' Frees and Valdez (1998). Understanding Relationships Using Copulas. North
+#' American Actuarial Journal 2(1):1-25 January 1998.
+#'
 #' @examples
 #' \donttest{
 #' excop <- indcop(dim = 2)
@@ -19,6 +28,7 @@
 #' }
 #'
 #' @export
+#' @seealso \code{\link{claycop}} and \code{\link{frankcop}}
 
 
 indcop <- function (dim = 2L) {

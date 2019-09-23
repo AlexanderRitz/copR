@@ -31,7 +31,8 @@ copula.}
 }
 \description{
 Calculates the maximum of the log-Likelihood function of a chosen Copula
-family by utilizing stats::optimise.
+family by utilizing stats::optimise. Care has to be taken, since the data to
+base the estimation on, has to be normed to the inverval [0, 1].
 }
 \examples{
 \donttest{
@@ -50,4 +51,12 @@ for (i in 1:100) {
 plot(x = xpar, y = ll, xlab = "Parameter value", ylab = "log-likelihood")
 }
 
+}
+\references{
+Hofert et al. (2012). Likelihood inference for Archimedean
+copulas in high dimensions under known margins. Journal of Multivariate
+Analysis 110, 133-150.
+}
+\seealso{
+\code{\link{cloglik}}, \code{\link{c_aic}} and \code{\link{c_bic}}
 }

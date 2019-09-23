@@ -11,9 +11,11 @@
 #' @param fast logical. For large data sets without missing values, the
 #' computation of Kendall's tau can be sped up considerably by using the
 #' function \code{cor.fk} from the package \code{pcaPP}.
-#'
 #' @return Matrix with pairwise Kendall rank correlation coefficients between
 #' the columns of the supplied data.
+#'
+#' @references Davies (2016). The Book of R: A first course in programming and
+#' statistics. no starch press.
 #'
 #' @examples
 #' \donttest{

@@ -23,6 +23,18 @@
 #' variable "t" in case of the generator function, "s" for its inverse and
 #' variables "ui" in the case of cdf and pdf.
 #'
+#' @references Hofert et al. (2018). Elements of Copula Modeling with R.
+#' Springer.
+#' @references
+#' Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+#' Second Edition.
+#' @references
+#' Frees and Valdez (1998). Understanding Relationships Using Copulas. North
+#' American Actuarial Journal 2(1):1-25.
+#' @references
+#' Genest (1987). Frank's family of bivariate distributions. Biometrika (1987),
+#' 74, 3, pp. 549-55.
+#'
 #' @examples
 #' \donttest{
 #' excop <- frankcop(par = 5, dim = 2)
@@ -30,6 +42,7 @@
 #' }
 #'
 #' @export
+#' @seealso \code{\link{claycop}} and \code{\link{indcop}}
 
 frankcop <- function (par = NA,
   dim = 2L) {

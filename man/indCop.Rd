@@ -29,3 +29,16 @@ summary(excop)
 }
 
 }
+\references{
+Hofert et al. (2018). Elements of Copula Modeling with R.
+Springer.
+
+Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+Second Edition.
+
+Frees and Valdez (1998). Understanding Relationships Using Copulas. North
+American Actuarial Journal 2(1):1-25 January 1998.
+}
+\seealso{
+\code{\link{claycop}} and \code{\link{frankcop}}
+}

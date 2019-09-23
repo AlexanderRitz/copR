@@ -6,7 +6,13 @@
 #' defined.
 #' @param u double. Optional argument supplying the data to evaluate the cdf.
 #' @return An expression for the cdf of the supplied copula object or its
-#' numeric value at the supplied u in case evaluation was chosen..
+#' numeric value at the supplied u in case evaluation was chosen.
+#'
+#' @references Hofert et al. (2018). Elements of Copula Modeling with R.
+#' Springer.
+#' @references
+#' Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+#' Second Edition.
 #'
 #' @examples
 #' \donttest{
@@ -17,6 +23,7 @@
 #' }
 #'
 #' @export
+#' @seealso \code{\link{dcop}} and \code{\link{rcop}}
 
 pcop <- function(copula, u){
   UseMethod("pcop")

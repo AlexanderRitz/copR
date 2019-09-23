@@ -20,3 +20,7 @@ A simplification of an implementation of Diethelm Wuertz in the package
 "fCopulae". Original implementation falsely gives value of "Inf" for
 tau = -1, this has been fixed in this implementation.
 }
+\references{
+Frees and Valdez (1998). Understanding Relationships Using
+Copulas. North American Actuarial Journal 2(1):1-25.
+}

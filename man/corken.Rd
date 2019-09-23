@@ -43,3 +43,7 @@ corken(swiss, fast = TRUE)
 }
 
 }
+\references{
+Davies (2016). The Book of R: A first course in programming and
+statistics. no starch press.
+}

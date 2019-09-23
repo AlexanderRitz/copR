@@ -8,6 +8,12 @@
 #' @return expression or numeric for the pdf of the supplied copula object or
 #' its value at the supplied u.
 #'
+#' @references Hofert et al. (2018). Elements of Copula Modeling with R.
+#' Springer.
+#' @references
+#' Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+#' Second Edition.
+#'
 #' @examples
 #' \donttest{
 #' excop <- claycop(par = 5, dim = 2)
@@ -17,6 +23,7 @@
 #' }
 #'
 #' @export
+#' @seealso \code{\link{pcop}} and \code{\link{rcop}}
 
 dcop <- function(copula, u){
   UseMethod("dcop")

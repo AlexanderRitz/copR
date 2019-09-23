@@ -28,3 +28,13 @@ expdfval <- dcop(excop, eva = TRUE, u = c(0.5, 0.5))
 }
 
 }
+\references{
+Hofert et al. (2018). Elements of Copula Modeling with R.
+Springer.
+
+Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+Second Edition.
+}
+\seealso{
+\code{\link{pcop}} and \code{\link{rcop}}
+}

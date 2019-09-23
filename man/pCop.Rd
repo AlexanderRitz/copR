@@ -14,7 +14,7 @@ defined.}
 }
 \value{
 An expression for the cdf of the supplied copula object or its
-numeric value at the supplied u in case evaluation was chosen..
+numeric value at the supplied u in case evaluation was chosen.
 }
 \description{
 Constructs the distribution function for a supplied copula object.
@@ -27,4 +27,14 @@ excdf <- pcop(excop)
 excdfval <- pcop(excop, u = c(0.5, 0.5))
 }
 
+}
+\references{
+Hofert et al. (2018). Elements of Copula Modeling with R.
+Springer.
+
+Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+Second Edition.
+}
+\seealso{
+\code{\link{dcop}} and \code{\link{rcop}}
 }

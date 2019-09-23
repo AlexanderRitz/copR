@@ -17,6 +17,7 @@
 #' }
 #'
 #' @export
+#' @seealso \code{\link{cloglik}} and \code{\link{c_bic}}
 
 c_aic <- function(copula) {
   if (is.fitcop(copula)) {
@@ -47,6 +48,7 @@ c_aic <- function(copula) {
 #' }
 #'
 #' @export
+#' @seealso \code{\link{cloglik}} and \code{\link{c_aic}}
 
 c_bic <- function(copula) {
   if (is.fitcop(copula)) {

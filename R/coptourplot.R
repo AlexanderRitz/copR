@@ -26,6 +26,11 @@
 #' @return A contourplot with the values given by FUN for a copula of the form
 #' given by the supplied copula object.
 #'
+#' @references Hofert et al. (2018). Elements of Copula Modeling with R.
+#' Springer.
+#' @references Davies (2016). The Book of R: A first course in programming and
+#' statistics. no starch press.
+#'
 #' @examples
 #' \donttest{
 #' excop <- claycop(par = 0.5, dim = 2)
@@ -38,6 +43,7 @@
 #' }
 #'
 #' @export
+#' @seealso \code{\link{coppersplot}}
 
 coptourplot <- function (copula,
                          FUN,

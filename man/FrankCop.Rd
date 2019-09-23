@@ -41,3 +41,19 @@ summary(excop)
 }
 
 }
+\references{
+Hofert et al. (2018). Elements of Copula Modeling with R.
+Springer.
+
+Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+Second Edition.
+
+Frees and Valdez (1998). Understanding Relationships Using Copulas. North
+American Actuarial Journal 2(1):1-25.
+
+Genest (1987). Frank's family of bivariate distributions. Biometrika (1987),
+74, 3, pp. 549-55.
+}
+\seealso{
+\code{\link{claycop}} and \code{\link{indcop}}
+}

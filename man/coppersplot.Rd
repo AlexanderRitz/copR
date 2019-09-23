@@ -76,3 +76,13 @@ coppersplot(copula = excop, FUN = "pdf", n.grid = 20, delta= 0.1,
 }
 
 }
+\references{
+Hofert et al. (2018). Elements of Copula Modeling with R.
+Springer.
+
+Davies (2016). The Book of R: A first course in programming and
+statistics. no starch press.
+}
+\seealso{
+\code{\link{coptourplot}}
+}

@@ -1,7 +1,8 @@
 #' Fitting of copula parameter by maximum likelihood
 #'
 #' Calculates the maximum of the log-Likelihood function of a chosen Copula
-#' family by utilizing stats::optimise.
+#' family by utilizing stats::optimise. Care has to be taken, since the data to
+#' base the estimation on, has to be normed to the inverval [0, 1].
 #'
 #' @param copula A copula object. Decides the copula family for which the
 #' log-Likelihood function is to be maximised.
@@ -21,6 +22,10 @@
 #' copula.}
 #' \item{observations}{The number of observations the estimation was based on.}
 #'
+#' @references Hofert et al. (2012). Likelihood inference for Archimedean
+#' copulas in high dimensions under known margins. Journal of Multivariate
+#' Analysis 110, 133-150.
+#'
 #' @examples
 #' \donttest{
 #' exc <- claycop(par = 5, dim = 2)
@@ -39,6 +44,7 @@
 #' }
 #'
 #' @export
+#' @seealso \code{\link{cloglik}}, \code{\link{c_aic}} and \code{\link{c_bic}}
 
 cfit <- function (copula, data, interval = NULL) {
   if (is.null(interval)) {

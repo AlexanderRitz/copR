@@ -19,5 +19,5 @@ knitr::opts_chunk$set(
 This vignette will illustrate the use of copR with some examples.
 
 ```{r setup}
-#library(copR)
+# Placeholder for future vignette.
 ```

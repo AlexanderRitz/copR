@@ -18,3 +18,7 @@ Simplistic implementation of the Debye function of order one. A
 simplification of an implementation of Diethelm Wuertz in the package
 "fCopulae".
 }
+\references{
+Frees and Valdez (1998). Understanding Relationships Using Copulas. North
+American Actuarial Journal 2(1):1-25.
+}

@@ -7,6 +7,10 @@
 #'
 #' @param x double. A numeric value as input for the Debye function of order one.
 #' @return The value of the Debye function of order one at x.
+#'
+#' @references
+#' Frees and Valdez (1998). Understanding Relationships Using Copulas. North
+#' American Actuarial Journal 2(1):1-25.
 
 
 debye <- function(x) {

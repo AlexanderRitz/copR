@@ -26,3 +26,22 @@ plot(exsam, ylim = c(0, 1), xlim = c(0, 1), ylab = "U2", xlab = "U1")
 }
 
 }
+\references{
+Hofert et al. (2018). Elements of Copula Modeling with R.
+Springer.
+
+Nelsen (2006). An introduction to copulas. Springer Series in Statistics.
+Second Edition.
+
+Whelan (2004). Sampling from Archimedean copulas. Quantitative
+Finance, 2004, vol. 4, issue 3, pp. 339-352.
+
+Marshall and Olkin (1988). Families of Multivariate Distributions.
+Journal of the American Statistical Association, Vol. 83, No. 403, pp.834-841.
+
+Genest (1987). Frank's family of bivariate distributions. Biometrika (1987),
+74, 3, pp. 549-55.
+}
+\seealso{
+\code{\link{pcop}} and \code{\link{dcop}}
+}
