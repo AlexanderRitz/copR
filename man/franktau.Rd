@@ -17,5 +17,6 @@ by the supplied Kendalls'tau.
 \description{
 Implementation of the relationship between theta and tau for a Frank copula.
 A simplification of an implementation of Diethelm Wuertz in the package
-"fCopulae".
+"fCopulae". Original implementation falsely gives value of "Inf" for
+tau = -1, this has been fixed in this implementation.
 }

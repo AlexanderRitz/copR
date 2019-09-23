@@ -79,7 +79,7 @@ print.copula <- function (x, force = FALSE, ...) {
       "\n",
       "\n",
       paste(
-        "pdf omitted due to length, access with \"yourcopula\"$distribution$cdf"
+        "cdf omitted due to length, access with \"yourcopula\"$distribution$cdf"
         ),
       "\n",
       paste(

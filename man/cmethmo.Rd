@@ -5,7 +5,7 @@
 \title{Fitting of bivariate copula parameter by method of moments,
 using Kendall's tau}
 \usage{
-cmethmo(copula, data = NULL, tau = NULL)
+cmethmo(copula, data = NULL, tau = NULL, ...)
 }
 \arguments{
 \item{copula}{A copula object. Decides the copula family for which the
@@ -16,6 +16,9 @@ The data to base the dependence measure on. Optional if "tau" is supplied.}
 
 \item{tau}{double. A value to take as Kendall's tau, to base the method of
 moments estimator on.}
+
+\item{...}{Arguments to be passed to corken, regarding treatment of missing
+values or faster function choice.}
 }
 \value{
 A copula object with parameter theta chosen by inversion of Kendall's

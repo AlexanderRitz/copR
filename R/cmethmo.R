@@ -10,6 +10,8 @@
 #' The data to base the dependence measure on. Optional if "tau" is supplied.
 #' @param tau double. A value to take as Kendall's tau, to base the method of
 #' moments estimator on.
+#' @param ... Arguments to be passed to corken, regarding treatment of missing
+#' values or faster function choice.
 #' @return A copula object with parameter theta chosen by inversion of Kendall's
 #' tau.
 #'
@@ -23,12 +25,21 @@
 #'
 #' @export
 
-cmethmo <- function (copula, data = NULL, tau = NULL) {
+cmethmo <- function (copula, data = NULL, tau = NULL, ...) {
   if (is.null(tau)) {
     if (ncol(data) == 2 && !is.null(data)) {
-      tau <- corken(data = data)[1, 2]
+      tau <- corken(data = data, ...)[1, 2]
+      if (is.na(tau)) {
+        stop("Missing values have to be addressed in order to calculate tau.")
+      }
       if (is.claycop(copula)) {
+        if (tau == 1) {
+          theta <- Inf
+        } else if (tau == -1) {
+          theta <- -Inf
+        } else {
         theta <- (-2 * tau / (tau - 1))
+        }
         newcop <- claycop(par = theta, dim = 2)
       } else if (is.frankcop(copula)) {
         if (tau == 0) {
@@ -50,7 +61,13 @@ cmethmo <- function (copula, data = NULL, tau = NULL) {
   } else if (length(tau) == 1) {
     if (tau <= 1 && tau >= -1) {
       if (is.claycop(copula)) {
-        theta <- (-2 * tau / (tau - 1))
+        if (tau == 1) {
+          theta <- Inf
+        } else if (tau == -1) {
+          theta <- -Inf
+        } else {
+          theta <- (-2 * tau / (tau - 1))
+        }
         newcop <- claycop(par = theta, dim = 2)
       } else if (is.frankcop(copula)) {
         if (tau == 0) {

@@ -59,7 +59,9 @@ cfit <- function (copula, data, interval = NULL) {
       stop("Supplied copula object is not supported.")
     }
   } else if (length(interval) == 2) {
-    if (interval[1] < interval[2]) {
+    if (!(is.numeric(interval[1]) && is.numeric(interval[2]))) {
+      stop("Please supply numeric values as interval boundaries.")
+    } else if (interval[1] < interval[2]) {
       lowb <- interval[1]
       upb <- interval[2]
     } else if (interval[2] < interval[1]) {
@@ -82,9 +84,11 @@ cfit <- function (copula, data, interval = NULL) {
     data = data
   )
   if (copula$family == "Clayton") {
-    optmodel <- claycop(par = as.numeric(result[1]), dim = copula$dimension)
+    optmodel <-
+      claycop(par = as.numeric(result[1]), dim = copula$dimension)
   } else if (copula$family == "Frank") {
-    optmodel <- frankcop(par = as.numeric(result[1]), dim = copula$dimension)
+    optmodel <-
+      frankcop(par = as.numeric(result[1]), dim = copula$dimension)
   }
   objective <- result$objective
   n <- nrow(data)
