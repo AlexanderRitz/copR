@@ -88,3 +88,31 @@ print.copula <- function (x, force = FALSE, ...) {
     )
   }
 }
+
+
+#' Printing of fitted copula objects
+#'
+#' @inheritParams base::print
+#'
+#' @export
+
+print.fitcop <- function (x, ...) {
+  cat(
+    paste(
+      "The ",
+      x$dimension,
+      " dimensional ",
+      x$family,
+      " copula has been fitted with theta = ",
+      x$parameter,
+      ".",
+      sep = ""
+    ),
+    paste(
+      "\n\nThe maximum value of the log-likelihood function was ",
+      x$loglikelihood,
+      ".",
+      sep = ""
+    )
+  )
+}
