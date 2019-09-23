@@ -73,9 +73,4 @@ test_that("Invalid input is handled correctly", {
   ic1 <- indcop(dim = 2)
   expect_error(fi13 <- cmethmo(copula = ic1, data = U),
     "No parameter")
-
-  x <- 7
-  expect_error(fit14 <- cmethmo(copula = x, data = U),
-    "not supported")
-
 })

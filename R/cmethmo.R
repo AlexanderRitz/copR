@@ -25,66 +25,73 @@
 #'
 #' @export
 
-cmethmo <- function (copula, data = NULL, tau = NULL, ...) {
-  if (is.null(tau)) {
-    if (ncol(data) == 2 && !is.null(data)) {
-      tau <- corken(data = data, ...)[1, 2]
-      if (is.na(tau)) {
-        stop("Missing values have to be addressed in order to calculate tau.")
-      }
-      if (is.claycop(copula)) {
-        if (tau == 1) {
-          theta <- Inf
-        } else if (tau == -1) {
-          theta <- -Inf
-        } else {
-        theta <- (-2 * tau / (tau - 1))
+cmethmo <- function (copula,
+  data = NULL,
+  tau = NULL,
+  ...) {
+  if (copula$dimension != 2) {
+    stop("Only a bivariate copula may be fitted with this method.")
+  } else {
+    if (is.null(tau)) {
+      if (ncol(data) == 2 && !is.null(data)) {
+        tau <- corken(data = data, ...)[1, 2]
+        if (is.na(tau)) {
+          stop("Missing values have to be addressed in order to calculate tau.")
         }
-        newcop <- claycop(par = theta, dim = 2)
-      } else if (is.frankcop(copula)) {
-        if (tau == 0) {
-          theta <- 0
-          newcop <- frankcop(par = theta, dim = 2)
+        if (is.claycop(copula)) {
+          if (tau == 1) {
+            theta <- Inf
+          } else if (tau == -1) {
+            theta <- -Inf
+          } else {
+            theta <- (-2 * tau / (tau - 1))
+          }
+          newcop <- claycop(par = theta, dim = 2)
+        } else if (is.frankcop(copula)) {
+          if (tau == 0) {
+            theta <- 0
+            newcop <- frankcop(par = theta, dim = 2)
+          } else {
+            theta <- franktau(tau)
+            newcop <- frankcop(par = theta, dim = 2)
+          }
+        } else if (is.indcop(copula)) {
+          stop("No parameter to be chosen in case of independence!")
         } else {
-          theta <- franktau(tau)
-          newcop <- frankcop(par = theta, dim = 2)
+          stop("Supplied copula object is not supported currrently.")
         }
-      } else if (is.indcop(copula)) {
-        stop("No parameter to be chosen in case of independence!")
+        return(newcop)
       } else {
-        stop("Supplied copula object is not supported currrently.")
+        stop("Data of dimension (n x 2) has to be supplied!")
       }
-      return(newcop)
-    } else {
-      stop("Data of dimension (n x 2) has to be supplied!")
-    }
-  } else if (length(tau) == 1) {
-    if (tau <= 1 && tau >= -1) {
-      if (is.claycop(copula)) {
-        if (tau == 1) {
-          theta <- Inf
-        } else if (tau == -1) {
-          theta <- -Inf
+    } else if (length(tau) == 1) {
+      if (tau <= 1 && tau >= -1) {
+        if (is.claycop(copula)) {
+          if (tau == 1) {
+            theta <- Inf
+          } else if (tau == -1) {
+            theta <- -Inf
+          } else {
+            theta <- (-2 * tau / (tau - 1))
+          }
+          newcop <- claycop(par = theta, dim = 2)
+        } else if (is.frankcop(copula)) {
+          if (tau == 0) {
+            theta <- 0
+            newcop <- frankcop(par = theta, dim = 2)
+          } else {
+            theta <- franktau(tau)
+            newcop <- frankcop(par = theta, dim = 2)
+          }
+        } else if (is.indcop(copula)) {
+          stop("No parameter to be chosen in case of independence!")
         } else {
-          theta <- (-2 * tau / (tau - 1))
+          stop("Supplied copula object is not supported currrently.")
         }
-        newcop <- claycop(par = theta, dim = 2)
-      } else if (is.frankcop(copula)) {
-        if (tau == 0) {
-          theta <- 0
-          newcop <- frankcop(par = theta, dim = 2)
-        } else {
-          theta <- franktau(tau)
-          newcop <- frankcop(par = theta, dim = 2)
-        }
-      } else if (is.indcop(copula)) {
-        stop("No parameter to be chosen in case of independence!")
+        return(newcop)
       } else {
-        stop("Supplied copula object is not supported currrently.")
+        stop("Tau has to take a value in [-1, 1].")
       }
-      return(newcop)
-    } else {
-      stop("Tau has to take a value in [-1, 1].")
     }
   }
 }
